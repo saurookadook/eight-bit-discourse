@@ -19,7 +19,6 @@ class PostForm extends Component {
 
   onChangeHandler = (event) => {
     this.setState({
-      // ??
       [event.target.name]: event.target.value
     });
   }
