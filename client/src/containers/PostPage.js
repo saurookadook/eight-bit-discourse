@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // import { loadBook } from '../actions/bookActions.js';
 import '../App.css';
-// import CommentForm from './commentForm.js';
+import CommentForm from './commentForm.js';
 // import CommentsList from '../components/CommentsList.js';
 // import { fetchComments } from '../actions/commentActions.js';
 
@@ -28,8 +28,8 @@ class PostPage  extends Component {
         </div>
 
         <div className="comments">
-          <CommentForm  postId = { this.props.match.params.id }/>
-          <CommentsList comment = { post.comments }/>
+          <CommentForm  postId={ this.props.match.params.id }/>
+          <CommentsList comments={ post.comments }/>
         </div>
       </div>
     )
