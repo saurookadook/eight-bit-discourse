@@ -1,5 +1,4 @@
 import React from 'react';
-import './NavBar.css'
 
 export const Home = () =>
     <div className="Home">

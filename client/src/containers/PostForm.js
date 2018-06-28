@@ -9,7 +9,11 @@ class PostForm extends Component {
     super(props)
 
     this.state = {
-      tbd: ""
+      title: '',
+      game: '',
+      author: '',
+      discussion: '',
+      rating: ''
     }
   }
 
@@ -24,30 +28,29 @@ class PostForm extends Component {
     event.preventDefault();
 
     this.props.submitPost(this.state);
-      // this.refs.nameInput.value = '';
-      // this.refs.authorInput.value = '';
-      // this.refs.summaryInput.value = '';
-      // this.refs.reviewInput.value = '';
-      // this.refs.ratingInput.value = '';
-      // this.refs.imageInput.value = '';
+      this.refs.nameInput.value = '';
+      this.refs.gameInput.value = '';
+      this.refs.authorInput.value = '';
+      this.refs.discussionInput.value = '';
+      this.refs.ratingInput.value = '';
   }
 
   render() {
     return (
       <div className="form">
-        <h3>Add a new book:</h3>
+        <h3>What would you like to discuss with the hive mind?</h3>
         <form id="post-form" onSubmit={this.onSubmitHandler}>
           <p>
-            <input ref="nameInput" type="text" name="name" placeholder="Title" value={this.state.name} onChange={this.onChangeHandler}/>
+            <input ref="nameInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler}/>
+            <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onchange={this.onChangeHandler}/>
             <input ref="authorInput" type="text" name="author" placeholder="Author" value={this.state.author} onChange={this.onChangeHandler}/>
           </p>
           <p>
-            <textarea ref="summaryInput" name="summary" className="textarea" placeholder="Summary" value={this.state.summary} onChange={this.onChangeHandler}/>
-            <textarea ref="reviewInput" name="review" className="textarea" placeholder="Review" value={this.state.review} onChange={this.onChangeHandler}/>
+            <textarea ref="discussionInput" name="discussion" className="textarea" placeholder="Your thoughts...." value={this.state.discussion} onChange={this.onChangeHandler}/>
           </p>
           <p>
-          <input ref="ratingInput" type="number" name="rating" placeholder="Rating (1-5)" value={this.state.rating} onChange={this.onChangeHandler}/>
-          <input ref="imageInput" type="text" name="image_url" placeholder="Book Image" value={this.state.image_url} onChange={this.onChangeHandler}/>
+            <p>How would you rate this game?</p>
+            <input ref="ratingInput" type="number" name="rating" placeholder="Rating (1-10)" value={this.state.rating} onChange={this.onChangeHandler}/>
           </p>
           <button type="submit">Add a post/button>
         </form>
@@ -58,8 +61,8 @@ class PostForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    submitBook: submitBook
+    submitPost: submitPost
   }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(BookForm);
+export default connect(null, mapDispatchToProps)(PostForm);
