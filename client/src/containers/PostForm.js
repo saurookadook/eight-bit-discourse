@@ -51,7 +51,7 @@ class PostForm extends Component {
             <p>How would you rate this game?</p>
             <input ref="ratingInput" type="number" name="rating" placeholder="Rating (1-10)" value={this.state.rating} onChange={this.onChangeHandler}/>
           </p>
-          <button type="submit">Add a post/button>
+          <button type="submit">Add a post</button>
         </form>
       </div>
     )

@@ -3,11 +3,11 @@ export function fetchPosts() {
     dispatch({ type: 'LOADING_POSTS' });
     return fetch('http://localhost3001/posts')
       .then(response => response.json())
-      .then(post => dispatch({ type: 'FETCH_POSTS', posts: posts }));
+      .then(posts => dispatch({ type: 'FETCH_POSTS', posts: posts }));
   }
 }
 
-export function submitBook(formContent) {
+export function submitPost(formContent) {
   return (dispatch) => {
     //dispatch({ type: 'SUBMITTING_BOOK' });
     return fetch(`http://localhost:3001/posts`, {
