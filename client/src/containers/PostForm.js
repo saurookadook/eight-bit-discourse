@@ -11,7 +11,7 @@ class PostForm extends Component {
     this.state = {
       title: '',
       game: '',
-      author: '',
+      user: '',
       discussion: '',
       rating: ''
     }
@@ -29,7 +29,7 @@ class PostForm extends Component {
     this.props.submitPost(this.state);
       this.refs.nameInput.value = '';
       this.refs.gameInput.value = '';
-      this.refs.authorInput.value = '';
+      this.refs.userInput.value = '';
       this.refs.discussionInput.value = '';
       this.refs.ratingInput.value = '';
   }
@@ -42,7 +42,7 @@ class PostForm extends Component {
           <p>
             <input ref="nameInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler}/>
             <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onchange={this.onChangeHandler}/>
-            <input ref="authorInput" type="text" name="author" placeholder="Author" value={this.state.author} onChange={this.onChangeHandler}/>
+            <input ref="userInput" type="text" name="user" placeholder="User" value={this.state.user.name} onChange={this.onChangeHandler}/>
           </p>
           <p>
             <textarea ref="discussionInput" name="discussion" className="textarea" placeholder="Your thoughts...." value={this.state.discussion} onChange={this.onChangeHandler}/>

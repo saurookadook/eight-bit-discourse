@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2018_06_28_173700) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "game"
-    t.string "author"
     t.text "discussion"
     t.string "rating"
     t.integer "user_id"

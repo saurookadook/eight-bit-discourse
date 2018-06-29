@@ -9,9 +9,9 @@ import { fetchComments } from '../actions/commentActions.js';
 
 class PostPage extends Component {
 
-  // componentDidMount() {
-  //   this.props.fetchComments(this.props.post.id)
-  // }
+  componentDidMount() {
+    this.props.fetchComments(this.props.post.id)
+  }
 
   render(props) {
     const post = this.props.post;
@@ -22,7 +22,7 @@ class PostPage extends Component {
         <div className="postDiv">
           <p className="title">{post.name}</p>
           <p className="game">{post.game}</p>
-          <p className="author">By: {post.author}</p>
+          <p className="user">By: {post.user.name}</p>
           <p className="rating">Rating: {post.rating} stars</p>
           <p className="discussion">Summary: {post.discussion}</p>
         </div>
