@@ -7,6 +7,15 @@ export function fetchPosts() {
   }
 }
 
+export function fetchPost(bookId) {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_POST' });
+    return fetch(`https://localhost3001/posts/${bookId}`)
+      .then(response => response.json())
+      .then(post => dispatch({ type: 'FETCH_BOOK', post: post }));
+  }
+}
+
 export function submitPost(formContent) {
   return (dispatch) => {
     //dispatch({ type: 'SUBMITTING_BOOK' });
@@ -14,7 +23,7 @@ export function submitPost(formContent) {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({post: formContent})})
-      .then(resp => resp.json())
-      .then(post => dispatch({ type: 'SUBMIT_BOOK', post: post}))
+      .then(response => response.json())
+      .then(post => dispatch({ type: 'SUBMIT_BOOK', post: post }));
   }
 }

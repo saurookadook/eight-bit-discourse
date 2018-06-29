@@ -17,7 +17,7 @@ class PostsPage extends Component {
     return (
       <div className="PostsPage">
         <PostForm />
-        <PostsList postsList = {this.props.posts }/>
+        <PostsList postsList={this.props.posts}/>
       </div>
     )
   }

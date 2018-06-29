@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import  NavBar  from './components/NavBar';
 import PostsPage from './containers/PostsPage'
 import PostPage from './containers/PostPage'
 import { Home } from './components/Home';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { fetchPosts } from './actions/postActions'
 
 class App extends Component {
   render() {
@@ -24,4 +24,16 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchPosts: fetchPosts
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
