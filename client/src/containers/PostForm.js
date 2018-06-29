@@ -48,7 +48,7 @@ class PostForm extends Component {
             <textarea ref="discussionInput" name="discussion" className="textarea" placeholder="Your thoughts...." value={this.state.discussion} onChange={this.onChangeHandler}/>
           </p>
           <p>
-            <p>How would you rate this game?</p>
+            How would you rate this game?
             <input ref="ratingInput" type="number" name="rating" placeholder="Rating (1-10)" value={this.state.rating} onChange={this.onChangeHandler}/>
           </p>
           <button type="submit">Add a post</button>

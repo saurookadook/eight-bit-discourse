@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch'
+
 export function fetchPosts() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_POSTS' });
