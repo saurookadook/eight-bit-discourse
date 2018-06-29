@@ -41,7 +41,7 @@ class PostForm extends Component {
         <form id="post-form" onSubmit={this.onSubmitHandler}>
           <p>
             <input ref="nameInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler}/>
-            <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onchange={this.onChangeHandler}/>
+            <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onChange={this.onChangeHandler}/>
             <input ref="userInput" type="text" name="user" placeholder="User" value={this.state.user.name} onChange={this.onChangeHandler}/>
           </p>
           <p>

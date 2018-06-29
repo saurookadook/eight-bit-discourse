@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import  './book.css';
+// import  './post.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -11,7 +11,7 @@ class Post extends Component {
     return (
       <div className="postDiv">
         <h3>{post.name} || {post.author}</h3>
-        <p>Game: {post.game}<p>
+        <p>Game: {post.game}</p>
       </div>
     )
   }
@@ -32,4 +32,4 @@ const mapStateToProps = (state, ownProps) => {
 //   }, dispatch)
 // }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Book);
+export default connect(mapStateToProps)(Post);

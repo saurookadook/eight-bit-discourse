@@ -18,7 +18,6 @@ export function fetchPost(bookId) {
 
 export function submitPost(formContent) {
   return (dispatch) => {
-    //dispatch({ type: 'SUBMITTING_BOOK' });
     return fetch(`http://localhost:3001/posts`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
