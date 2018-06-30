@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
     def index
       @posts = Post.order(created_at: :desc)
-      render json: @posts
+      render json: @posts, include: '**'
     end
 
     def show
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :game, :discussion, :rating, :user_id,
         user_attributes: [:id, :username, :email, :password],
-        comment_attributes: [:user_id, :post_id, :content]
+        comments_attributes: [:user_id, :post_id, :content]
         )
     end
 

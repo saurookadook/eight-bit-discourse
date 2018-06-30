@@ -16,7 +16,6 @@ class PostsPage extends Component {
 
     return (
       <div className="PostsPage">
-        console.log(this.props.state)
         <PostForm />
         <PostsList postsList={this.props.posts}/>
       </div>

@@ -8,9 +8,10 @@ class Post extends Component {
 
   render() {
     const {post} = this.props
+    debugger
     return (
       <div className="postDiv">
-        <h3>{post.name} || {post.author}</h3>
+        <h3>{post.title} || </h3>
         <p>Game: {post.game}</p>
       </div>
     )
