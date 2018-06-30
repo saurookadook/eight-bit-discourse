@@ -3,7 +3,7 @@ import '../components/NavBar.css';
 import Post from './Post'
 
 const PostsList = ({ postsList }) => {
-  debugger
+  // debugger
   if (postsList) {
     const posts = postsList.map((post, index) => {
       return (
