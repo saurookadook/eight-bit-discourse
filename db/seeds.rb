@@ -11,5 +11,7 @@ user2 = User.create(username: "herpderp", email: "fallsonface@yahoo.com", passwo
 user3 = User.create(username: "saurookadook", email: "maskiella@gmail.com", password: "lolnotmypw")
 
 post1 = user3.posts.build(title: "Destiny is the worst", game: "Destiny", discussion: "Literally the biggest disappointment in gaming since Duke Nukem. A ton of hype about an amazing concept that was ultimately a dismal failure.", rating: "0", user_id: 3)
+post1.save
 
 comment1 = post1.comments.build(user_id: 2, content: "NO WAY IT WAS THE GREATEST GAME EVAR MADE!!!!!!")
+comment1.save

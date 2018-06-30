@@ -7,8 +7,8 @@ import PostsList from '../components/PostsList.js';
 import PostForm from './PostForm.js';
 
 class PostsPage extends Component {
-
   componentDidMount() {
+    console.log(this.props.fetchPosts())
     this.props.fetchPosts();
   }
 
@@ -16,6 +16,7 @@ class PostsPage extends Component {
 
     return (
       <div className="PostsPage">
+        console.log(this.props.state)
         <PostForm />
         <PostsList postsList={this.props.posts}/>
       </div>
