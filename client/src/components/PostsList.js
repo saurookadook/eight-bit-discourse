@@ -12,7 +12,7 @@ const PostsList = ({ postsList }) => {
     })
 
     return (
-      <div className="postsList">
+      <div className="postsList text-left">
         <div>{posts}</div>
       </div>
     )
