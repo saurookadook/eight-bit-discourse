@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     end
 
     def show
-      @post = Post.find
+      
     end
 
     def new
@@ -27,7 +27,10 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:title, :game, :discussion, :rating, :user_id)
+      params.require(:post).permit(:title, :game, :discussion, :rating, :user_id,
+        user_attributes: [:id, :username, :email, :password],
+        comment_attributes: [:user_id, :post_id, :content]
+        )
     end
 
 end
