@@ -2,6 +2,6 @@ import React from 'react';
 
 export const Home = () =>
     <div className="Home">
-      <h1 className="appName">Welcome to 8-bit Discourse!</h1>
-      <p className="description">A place for open discourse about games.</p>
+      <h1 className="appName text-left ml-4">8-bit Discourse</h1>
+      <p className="description text-left ml-4">A place for open discourse about games.</p>
     </div>

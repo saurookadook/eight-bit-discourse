@@ -7,7 +7,7 @@ const NavBar = () => {
     <div className="NavBar">
       <NavLink className="NavLink" to="/">Home</NavLink>
       <NavLink className="NavLink" to="/posts">Latest Posts</NavLink>
-      <NavLink className="NavLink" to="/users/1/posts">Your Posts</NavLink>
+      <NavLink className="NavLink" to="/users/:userId/posts">Your Posts</NavLink>
     </div>
   );
 };

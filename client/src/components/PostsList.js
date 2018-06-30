@@ -12,7 +12,7 @@ const PostsList = ({ postsList }) => {
     })
 
     return (
-      <div className="postsList text-left">
+      <div className="postsList text-left ml-3">
         <div>{posts}</div>
       </div>
     )
