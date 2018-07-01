@@ -14,7 +14,7 @@ class PostPage extends Component {
   }
 
   render(props) {
-    debugger
+    console.log(this.props.post)
     const post = this.props.post;
 
     return (
