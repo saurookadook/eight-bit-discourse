@@ -6,6 +6,7 @@ import PostsPage from './containers/PostsPage';
 import PostPage from './containers/PostPage';
 import UserPostsPage from './containers/UserPostsPage';
 import { Home } from './components/Home';
+import { Footer } from './components/Footer';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPosts } from './actions/postActions';
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/posts" component={PostsPage} />
           <Route exact path="/posts/:postId" component={PostPage} />
           <Route exact path="/users/:userId/posts" component={UserPostsPage} />
+          <Footer />
         </div>
       </Router>
     );

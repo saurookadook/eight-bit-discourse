@@ -6808,8 +6808,12 @@ a.text-dark:hover, a.text-dark:focus {
 .Home {
   padding-top: 3em; }
 
+/* Footer */
+.Footer {
+  background-color: #BA5425; }
+
 body {
-  background: linear-gradient(to bottom right, orange, gray);
+  background: linear-gradient(to bottom right, #6695F5, gray);
   height: 1000px;
   margin: 0;
   padding: 0;

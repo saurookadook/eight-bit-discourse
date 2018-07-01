@@ -35,7 +35,7 @@ class PostForm extends Component {
   render() {
     return (
       <div className="form">
-        <h3>What would you like to discuss with the hive mind?</h3>
+        <h3>Anything to discuss with the hive mind?</h3>
         <form id="post-form" onSubmit={this.onSubmitHandler}>
           <p>
             <input ref="nameInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler}/>
