@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
 // import "../semantic/dist/semantic.min.css";
-import Bootstrap from 'react-bootstrap'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import registerServiceWorker from './registerServiceWorker';

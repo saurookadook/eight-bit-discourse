@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../components/NavBar.css';
+// import '../components/NavBar.css';
 import { fetchPosts } from '../actions/postActions.js';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -7,8 +7,8 @@ import PostsList from '../components/PostsList.js';
 import PostForm from './PostForm.js';
 
 class PostsPage extends Component {
+  
   componentDidMount() {
-    console.log(this.props.fetchPosts())
     this.props.fetchPosts();
   }
 

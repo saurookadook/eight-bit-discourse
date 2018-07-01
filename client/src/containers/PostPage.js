@@ -9,10 +9,12 @@ import { fetchComments } from '../actions/commentActions.js';
 class PostPage extends Component {
 
   componentDidMount() {
+    // this.props.fetchPost(null, this.props.post.id)
     this.props.fetchComments(this.props.post.id)
   }
 
   render(props) {
+    debugger
     const post = this.props.post;
 
     return (
@@ -21,7 +23,7 @@ class PostPage extends Component {
         <div className="postDiv">
           <p className="title">{post.name}</p>
           <p className="game">{post.game}</p>
-          <p className="user">By: {post.user.name}</p>
+          <p className="author">By: {post.author.username}</p>
           <p className="rating">Rating: {post.rating} stars</p>
           <p className="discussion">Summary: {post.discussion}</p>
         </div>
@@ -46,6 +48,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
+    // fetchPost: fetchPost,
     fetchComments: fetchComments
   }, dispatch);
 };

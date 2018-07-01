@@ -6,13 +6,20 @@ class PostsController < ApplicationController
     end
 
     def show
+      binding.pry
+      @post = Post.find(post_params)
 
-    end
-
-    def new
+      render json: @post, include: ['author', 'comments', 'comments.user']
     end
 
     def create
+      @post = Post.new(post_params)
+      if @post.valid?
+        @post.save
+        render json: @post
+      else
+        render json: { message: "There was an issue submitting your post, please try again."}
+      end
     end
 
     def edit
