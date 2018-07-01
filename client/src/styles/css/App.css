@@ -22,9 +22,9 @@
 .Home {
   padding-top: 3em; }
 
-.Home .homeImage {
-  background-image: url(https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center;
+.homeImage {
   display: inline;
+  float: right;
   height: 140px;
   width: 260px; }
 
