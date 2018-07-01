@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import '../App.css';
+import '../styles/css/App.css';
 import CommentForm from './CommentForm.js';
 import CommentsList from '../components/CommentsList.js';
 import { fetchComments } from '../actions/commentActions.js';

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/css/App.css';
 
 export const Home = () =>
     <div className="Home">

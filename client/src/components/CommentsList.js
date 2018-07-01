@@ -1,6 +1,6 @@
 import React from 'react';
 import '../components/NavBar.css';
-import '../App.css';
+import '../styles/scss/App.scss';
 
 const CommentsList = ({ comments }) => {
     if (comments) {

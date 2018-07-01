@@ -1,9 +1,8 @@
 import React from 'react';
-import '../components/NavBar.css';
 import Post from './Post'
 
 const PostsList = ({ postsList }) => {
-  
+
   if (postsList) {
     const posts = postsList.map((post, index) => {
       return (
