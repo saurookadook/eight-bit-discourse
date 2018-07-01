@@ -6808,9 +6808,16 @@ a.text-dark:hover, a.text-dark:focus {
 .Home {
   padding-top: 3em; }
 
+.Home .homeImage {
+  background-image: url(https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center;
+  display: inline;
+  height: 140px;
+  width: 260px; }
+
 /* Footer */
 .Footer {
-  background-color: #BA5425; }
+  background-color: #BA5425;
+  font-weight: bold; }
 
 body {
   background: linear-gradient(to bottom right, #6695F5, gray);

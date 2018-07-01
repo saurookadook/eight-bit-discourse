@@ -28,8 +28,20 @@
   padding-top: 3em;
 }
 
+.Home .homeImage {
+  background-image: url(https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+  display: inline;
+  height: 140px;
+  width: 260px;
+}
+
 /* Footer */
 .Footer {
   background-color: #BA5425;
   // border-top: 15px dashed #4BA42F;
+  font-weight: bold;
 }

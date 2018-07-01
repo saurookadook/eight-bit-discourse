@@ -8,9 +8,9 @@ class NavBar extends Component {
   render() {
     return (
       <div className="NavBar fixed-top text-left py-2">
-        <NavLink className="NavLink px-1 ml-4" to="/">Home</NavLink>
-        <NavLink className="NavLink px-1" to="/posts">Latest Posts</NavLink>
-        <NavLink className="NavLink px-1" to="/users/:userId/posts">Your Posts</NavLink>
+        <NavLink className="NavLink px-1 ml-4 text-light" to="/">Home</NavLink>
+        <NavLink className="NavLink px-1 text-light" to="/posts">Latest Posts</NavLink>
+        <NavLink className="NavLink px-1 text-light" to="/users/:userId/posts">Your Posts</NavLink>
       </div>
     );
   };
