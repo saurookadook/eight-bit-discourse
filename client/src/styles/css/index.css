@@ -6809,15 +6809,14 @@ a.text-dark:hover, a.text-dark:focus {
   padding-top: 3em; }
 
 body {
+  background: linear-gradient(to bottom right, orange, gray);
+  height: 1000px;
   margin: 0;
   padding: 0;
   font-family: sans-serif; }
 
 .App {
   margin-top: 7em; }
-
-.AppBody {
-  background: linear-gradient(to bottom right, orange, gray); }
 
 #food-search {
   margin-top: 5em; }

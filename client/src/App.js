@@ -16,12 +16,10 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <div className="AppBody bg-gradient-warning">
-            <Route path="/" component={Home} />
-            <Route exact path="/posts" component={PostsPage} />
-            <Route exact path="/posts/:postId" component={PostPage} />
-            <Route exact path="/users/:userId/posts" component={UserPostsPage} />
-          </div>
+          <Route path="/" component={Home} />
+          <Route exact path="/posts" component={PostsPage} />
+          <Route exact path="/posts/:postId" component={PostPage} />
+          <Route exact path="/users/:userId/posts" component={UserPostsPage} />
         </div>
       </Router>
     );
