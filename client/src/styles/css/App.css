@@ -20,13 +20,10 @@
 
 /* Home */
 .Home {
-  padding-top: 3em; }
+  margin-top: 40px; }
 
 .homeImage {
-  display: inline;
-  float: right;
-  height: 140px;
-  width: 260px; }
+  height: 100%; }
 
 /* Footer */
 .Footer {
