@@ -10,7 +10,7 @@ class Post extends Component {
     const { post } = this.props
 
     return (
-      <div className="postDiv">
+      <div className="postDiv bg-success bg-white">
         <Link to={`/posts/${post.id}`}>
           <h3>{post.title}</h3>
         </Link>

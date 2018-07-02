@@ -21,9 +21,9 @@ class CommentForm extends Component {
   }
 
   handleSubmit = (e) => {
-    debugger
+    // debugger
     e.preventDefault()
-    debugger
+    // debugger
     this.props.submitComment(this.state, this.props.postId);
     this.refs.userInput.value = '';
     this.refs.contentInput.value = '';

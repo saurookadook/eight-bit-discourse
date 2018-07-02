@@ -12,6 +12,11 @@ import { bindActionCreators } from 'redux';
 import { fetchPosts } from './actions/postActions';
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
+
   render() {
     return (
       <Router>
@@ -19,8 +24,8 @@ class App extends Component {
           <NavBar />
           <Route path="/" component={Home} />
           <Route exact path="/posts" component={PostsPage} />
-          <Route exact path="/posts/:postId" component={PostPage} />
-          <Route exact path="/users/:userId/posts" component={UserPostsPage} />
+          <Route exact path="/posts/:id" component={PostPage} />
+          <Route exact path="/users/:id/posts" component={UserPostsPage} />
           <Footer />
         </div>
       </Router>

@@ -9,19 +9,18 @@ import { fetchComments } from '../actions/commentActions.js';
 class PostPage extends Component {
 
   componentDidMount() {
+    debugger
     // this.props.fetchPost(null, this.props.post.id)
     this.props.fetchComments(this.props.post.id)
   }
 
   render(props) {
-    console.log(this.props.post)
     const post = this.props.post;
 
     return (
       <div className="mainPostDiv">
-        // <img className="postImage" src={`${post.image_url}`} alt={post.name} />
         <div className="postDiv">
-          <p className="title">{post.name}</p>
+          <p className="title">{post.title}</p>
           <p className="game">{post.game}</p>
           <p className="author">By: {post.author.username}</p>
           <p className="rating">Rating: {post.rating} stars</p>
@@ -29,8 +28,8 @@ class PostPage extends Component {
         </div>
 
         <div className="comments">
-          <CommentForm postId={ this.props.match.params.id }/>
-          <CommentsList comments={ post.comments }/>
+          <CommentsList comments={post.comments} />
+          <CommentForm postId={this.props.match.params.id} />
         </div>
       </div>
     )
@@ -38,6 +37,7 @@ class PostPage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   const post = state.posts.find((post) => post.id === parseInt(ownProps.match.params.id))
   if (post) {
     return { post: post }
@@ -47,6 +47,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+  debugger
   return bindActionCreators({
     // fetchPost: fetchPost,
     fetchComments: fetchComments

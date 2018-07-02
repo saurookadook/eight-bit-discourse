@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     end
 
     def show
-      binding.pry
+      # binding.pry
       @post = Post.find(post_params)
 
       render json: @post, include: ['author', 'comments', 'comments.user']
