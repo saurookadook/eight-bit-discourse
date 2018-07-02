@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
 
   # resources :comments
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :users
 
   root to: 'application#home'

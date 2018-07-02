@@ -9,8 +9,7 @@ import { fetchComments } from '../actions/commentActions.js';
 class PostPage extends Component {
 
   componentDidMount() {
-    debugger
-    // this.props.fetchPost(null, this.props.post.id)
+    this.props.fetchPost(this.props.post.id)
     this.props.fetchComments(this.props.post.id)
   }
 
@@ -20,7 +19,7 @@ class PostPage extends Component {
     return (
       <div className="mainPostDiv">
         <div className="postDiv">
-          <p className="title">{post.title}</p>
+          <h2 className="title">{post.title}</h2>
           <p className="game">{post.game}</p>
           <p className="author">By: {post.author.username}</p>
           <p className="rating">Rating: {post.rating} stars</p>
@@ -37,7 +36,6 @@ class PostPage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   const post = state.posts.find((post) => post.id === parseInt(ownProps.match.params.id))
   if (post) {
     return { post: post }
@@ -47,11 +45,11 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  debugger
+  // debugger
   return bindActionCreators({
-    // fetchPost: fetchPost,
+    fetchPost: fetchPost,
     fetchComments: fetchComments
   }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostPage);
+export default connect(mapStateToProps)(PostPage);

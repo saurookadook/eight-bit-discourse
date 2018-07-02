@@ -7,12 +7,12 @@ import PostsList from '../components/PostsList.js';
 import PostForm from './PostForm.js';
 
 class PostsPage extends Component {
-  
-  componentDidMount() {
-    this.props.fetchPosts();
-  }
 
-  render() {
+  // componentDidMount() {
+  //   this.props.fetchPosts();
+  // }
+
+  render(props) {
 
     return (
       <div className="PostsPage">
@@ -29,10 +29,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchPosts: fetchPosts
-  }, dispatch);
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators({
+//     fetchPosts: fetchPosts
+//   }, dispatch);
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostsPage);
+export default connect(mapStateToProps)(PostsPage);
