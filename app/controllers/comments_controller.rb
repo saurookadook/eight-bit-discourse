@@ -4,14 +4,14 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comments = @post.comments
 
-    render json: @comments, include: ['comments.user']
+    render json: @comments, include: ['user']
   end
 
   def show
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:comment_id])
 
-    render json: @comment, include: ['comment.user']
+    render json: @comment, include: ['user']
   end
 
   def new

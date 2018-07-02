@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../styles/css/App.css';
-import CommentForm from './CommentForm.js';
-import CommentsList from '../components/CommentsList.js';
-import { fetchComments } from '../actions/commentActions.js';
+import CommentForm from './CommentForm';
+import CommentsList from '../components/CommentsList';
+import { fetchPost } from '../actions/postActions';
+import { fetchComments } from '../actions/commentActions';
 
 class PostPage extends Component {
 
   componentDidMount() {
-    this.props.fetchPost(this.props.post.id)
+    this.props.fetchPost({postId: this.props.post.id})
     this.props.fetchComments(this.props.post.id)
   }
 
   render(props) {
+    console.log(this.props)
     const post = this.props.post;
-
+    console.log(post)
     return (
       <div className="mainPostDiv">
         <div className="postDiv">
@@ -36,11 +38,11 @@ class PostPage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const post = state.posts.find((post) => post.id === parseInt(ownProps.match.params.id))
-  if (post) {
-    return { post: post }
+  if (typeof state.post !== "undefined") {
+    // const post = state.posts.find(post => post.id === parseInt(ownProps.match.params.id))
+    return Object.assign({}, state, post: state.post)
   } else {
-    return { post: [] }
+    return Object.assign({}, state, post: {author: {username: ""}})
   }
 }
 
@@ -52,4 +54,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-export default connect(mapStateToProps)(PostPage);
+export default connect(mapStateToProps, mapDispatchToProps)(PostPage);

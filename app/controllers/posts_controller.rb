@@ -2,14 +2,14 @@ class PostsController < ApplicationController
 
     def index
       @posts = Post.order(created_at: :desc)
-      render json: @posts, include: ['author', 'comments', 'comments.user']
+      render json: @posts, include: ['author']
     end
 
     def show
       # binding.pry
       @post = Post.find(post_params)
 
-      render json: @post, include: ['author', 'comments', 'comments.user']
+      render json: @post, include: ['author']
     end
 
     def create

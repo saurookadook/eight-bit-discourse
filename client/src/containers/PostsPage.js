@@ -24,9 +24,7 @@ class PostsPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    posts: state.posts
-  }
+  return state
 }
 
 // const mapDispatchToProps = (dispatch) => {

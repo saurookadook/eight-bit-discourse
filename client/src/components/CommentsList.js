@@ -1,5 +1,4 @@
 import React from 'react';
-import '../components/NavBar.css';
 import '../styles/scss/App.scss';
 
 const CommentsList = ({ comments }) => {

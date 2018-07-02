@@ -3,7 +3,7 @@ export default function posts (state = [], action) {
     case 'FETCH_POSTS':
       return action.posts
     case 'FETCH_POST':
-      return action.post
+      return action.post 
     case 'FETCH_USER_POSTS':
       return action.posts
     case 'FETCH_USER_POST':
