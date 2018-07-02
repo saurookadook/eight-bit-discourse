@@ -23,7 +23,7 @@ class PostPage extends Component {
         <div className="postDiv">
           <h2 className="title">{post.title}</h2>
           <p className="game">{post.game}</p>
-          <p className="author">By: {post.author.username}</p>
+          typeof post.author !== "undefined" ? <p className="author">By: {post.author.username}</p> : <p className="author">By: anonymous?</p>
           <p className="rating">Rating: {post.rating} stars</p>
           <p className="discussion">Summary: {post.discussion}</p>
         </div>
@@ -38,18 +38,17 @@ class PostPage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  if (typeof state.post !== "undefined") {
-    // const post = state.posts.find(post => post.id === parseInt(ownProps.match.params.id))
-    return Object.assign({}, state, post: state.post)
+  const post = state.posts.find(post => post.id === parseInt(ownProps.match.params.id))
+  if (post) {
+    return { post }
   } else {
-    return Object.assign({}, state, post: {author: {username: ""}})
+    return { post: {} }
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   // debugger
   return bindActionCreators({
-    fetchPost: fetchPost,
     fetchComments: fetchComments
   }, dispatch);
 };

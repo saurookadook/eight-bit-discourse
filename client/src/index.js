@@ -8,6 +8,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import store from './store.js';
+// import rootReducer from './reducers';
 
 ReactDOM.render(
   <Provider store={store}>
