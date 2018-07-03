@@ -1,9 +1,10 @@
 export default function posts (state = [], action) {
   switch (action.type) {
     case 'FETCH_POSTS':
+      debugger
       return action.posts
     case 'FETCH_POST':
-      return action.post 
+      return Object.assign({}, state, action.post)
     case 'FETCH_USER_POSTS':
       return action.posts
     case 'FETCH_USER_POST':

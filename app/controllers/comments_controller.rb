@@ -20,6 +20,14 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(comment_params)
+    if @comment.valid?
+      @comment.save
+      render json: @comment
+    else
+      render json: { message: "There was an issue submitting your comment, please try again."}
+    end
   end
 
   def edit
@@ -29,6 +37,14 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:id, :content,
+      user_attributes: [:id, :username]
+    )
   end
 
 end

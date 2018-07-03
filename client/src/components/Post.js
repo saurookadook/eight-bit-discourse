@@ -1,16 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Post = ({ post }) => {
-
   return (
-    <div className="postDiv bg-success bg-white">
-      <Link to={`/posts/${post.id}`}>
-        <h3>{post.title}</h3>
-      </Link>
-      <div>
-        <p>Author: {post.author.username} || Game of discussion: {post.game}</p>
-      </div>
+    <div className="postDiv">
+      <h2 className="title">{post.title}</h2>
+      <p className="game">{post.game}</p>
+      <p className="author">By: {post.author.username}</p>
+      <p className="rating">Rating: {post.rating} stars</p>
+      <p className="discussion">Summary: {post.discussion}</p>
     </div>
   )
 }

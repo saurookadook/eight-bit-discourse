@@ -20,7 +20,7 @@ class PostPage extends Component {
     // const post = this.props.post;
     return (
       <div className="mainPostDiv">
-        <PostDisplay post={this.props.post} />
+        <Post post={this.props.post} />
         <div className="comments">
           <CommentsList comments={this.props.post.comments} />
           <CommentForm postId={this.props.match.params.id} />
