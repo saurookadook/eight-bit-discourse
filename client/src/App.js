@@ -5,7 +5,8 @@ import  NavBar  from './components/NavBar';
 import PostsPage from './containers/PostsPage';
 import PostPage from './containers/PostPage';
 import UserPostsPage from './containers/UserPostsPage';
-import { Home } from './components/Home';
+import { PageLayout } from './components/PageLayout'
+import { Welcome } from './components/Welcome';
 import { Footer } from './components/Footer';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -22,7 +23,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <Route path="/" component={Home} />
+          <PageLayout />
+          <Route path="/" component={Welcome} />
           <Route exact path="/posts" component={PostsPage} />
           <Route exact path="/posts/:id" component={PostPage} />
           <Route exact path="/users/:id/posts" component={UserPostsPage} />
@@ -34,6 +36,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     posts: state.posts
   }

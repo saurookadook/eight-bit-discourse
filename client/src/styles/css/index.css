@@ -6804,12 +6804,17 @@ a.text-dark:hover, a.text-dark:focus {
 .App-intro {
   font-size: large; }
 
-/* Home */
-.Home {
+/* PageHeader */
+.PageHeader {
   margin-top: 40px; }
 
-.homeImage {
+.PageHeaderImage {
   height: 100%; }
+
+/* Welcome */
+.Welcome {
+  background: white;
+  border-radius: 20px; }
 
 /* Footer */
 .Footer {

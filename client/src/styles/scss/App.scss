@@ -23,12 +23,12 @@
   font-size: large;
 }
 
-/* Home */
-.Home {
+/* PageHeader */
+.PageHeader {
   margin-top: 40px;
 }
 
-.homeImage {
+.PageHeaderImage {
   // background: url(https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center fixed;
   // -webkit-background-size: cover;
   // -moz-background-size: cover;
@@ -36,6 +36,12 @@
   // background-size: cover;
   height: 100%;
   // width: 260px;
+}
+
+/* Welcome */
+.Welcome {
+  background: white;
+  border-radius: 20px;
 }
 
 /* Footer */
