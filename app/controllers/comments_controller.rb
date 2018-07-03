@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  # might only need create, update, destroy...?
+
   def index
     @post = Post.find(params[:post_id])
     @comments = @post.comments
@@ -26,7 +28,7 @@ class CommentsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
 end
