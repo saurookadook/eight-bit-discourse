@@ -28,6 +28,15 @@
   margin-top: 40px;
 }
 
+.AppDetails {
+  color: #FFF;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
 .PageHeaderImage {
   // background: url(https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center fixed;
   // -webkit-background-size: cover;

@@ -1,5 +1,5 @@
 import React from 'react';
-import PostListItem from './Post'
+import PostListItem from './PostListItem'
 
 const PostsList = ({ postsList }) => {
 

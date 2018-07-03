@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../styles/css/App.css';
-import PostDisplay from '../components/PostDisplay';
+import Post from '../components/Post';
 import CommentForm from './CommentForm';
 import CommentsList from '../components/CommentsList';
 // import { fetchPost } from '../actions/postActions';

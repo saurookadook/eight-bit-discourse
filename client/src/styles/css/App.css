@@ -22,6 +22,10 @@
 .PageHeader {
   margin-top: 40px; }
 
+.AppDetails {
+  color: #FFF;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+
 .PageHeaderImage {
   height: 100%; }
 

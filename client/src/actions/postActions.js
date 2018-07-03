@@ -22,7 +22,7 @@ export function fetchPost({userId: userId, postId: postId}) {
       dispatch({ type: 'LOADING_POST' });
       return fetch(`http://localhost:3001/posts/${postId}`)
         .then(response => response.json())
-        .then(post => dispatch({ type: 'FETCH_POST', post: post, comments: post.comments }));
+        .then(post => dispatch({ type: 'FETCH_POST', post: post }));
     }
   }
 // }
