@@ -6814,12 +6814,27 @@ a.text-dark:hover, a.text-dark:focus {
 /* Welcome */
 .Welcome {
   background: white;
+  border: 1px solid #000;
   border-radius: 20px; }
 
 /* Footer */
-.FooterBase {
+footer {
   background-color: #BA5425;
+  border-top: 2px solid #000;
   font-weight: bold; }
+
+.FooterBushes {
+  border-radius: 15px 15px 0 0;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  font-size: 1em; }
+
+.MiddleBush {
+  background: #4ca730; }
+
+.OuterBushes {
+  background: #C6F552; }
 
 body {
   background: linear-gradient(to bottom right, #6695F5, gray);
