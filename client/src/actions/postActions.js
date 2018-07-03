@@ -9,22 +9,22 @@ export function fetchPosts() {
   }
 }
 
-// export function fetchPost({userId: userId, postId: postId}) {
-//   if (userId != null || undefined) {
-//     return (dispatch) => {
-//       dispatch({ type: 'LOADING_USER_POST' });
-//       return fetch(`http://localhost:3001/users/${userId}/posts/${postId}`)
-//         .then(response => reponse.json())
-//         .then(post => dispatch({ type: 'FETCH_USER_POST', post: post }));
-//     }
-//   } else {
-//     return (dispatch) => {
-//       dispatch({ type: 'LOADING_POST' });
-//       return fetch(`http://localhost:3001/posts/${postId}`)
-//         .then(response => response.json())
-//         .then(post => dispatch({ type: 'FETCH_POST', post: post }));
-//     }
-//   }
+export function fetchPost({userId: userId, postId: postId}) {
+  // if (userId != null || undefined) {
+  //   return (dispatch) => {
+  //     dispatch({ type: 'LOADING_USER_POST' });
+  //     return fetch(`http://localhost:3001/users/${userId}/posts/${postId}`)
+  //       .then(response => reponse.json())
+  //       .then(post => dispatch({ type: 'FETCH_USER_POST', post: post }));
+  //   }
+  // } else {
+    return (dispatch) => {
+      dispatch({ type: 'LOADING_POST' });
+      return fetch(`http://localhost:3001/posts/${postId}`)
+        .then(response => response.json())
+        .then(post => dispatch({ type: 'FETCH_POST', post: post, comments: post.comments }));
+    }
+  }
 // }
 
 export function submitPost(formContent) {

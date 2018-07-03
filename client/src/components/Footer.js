@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/css/App.css';
 
-export const FooterBase = () =>
+export const Footer = () =>
     <div className="fixed-bottom pt-3">
       <div className="container">
         <div className="row justify-content-center">

@@ -1,12 +1,12 @@
 import React from 'react';
-import Post from './Post'
+import PostListItem from './Post'
 
 const PostsList = ({ postsList }) => {
 
   if (postsList) {
     const posts = postsList.map((post, index) => {
       return (
-        <Post key={index} post={post} />
+        <PostListItem key={index} post={post} />
       )
     })
 

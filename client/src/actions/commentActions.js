@@ -1,11 +1,11 @@
-export function fetchComments(postId) {
-  return (dispatch) => {
-    dispatch({ type: 'LOADING_COMMENTS' });
-    return fetch(`http://localhost:3001/posts/${postId}/comments`)
-      .then(response => response.json())
-      .then(comments => dispatch({ type: 'FETCH_COMMENTS', comments: comments }));
-  }
-}
+// export function fetchComments(postId) {
+//   return (dispatch) => {
+//     dispatch({ type: 'LOADING_COMMENTS' });
+//     return fetch(`http://localhost:3001/posts/${postId}/comments`)
+//       .then(response => response.json())
+//       .then(comments => dispatch({ type: 'FETCH_COMMENTS', comments: comments }));
+//   }
+// }
 
 export function submitComment(formContent) {
   return (dispatch) => {
