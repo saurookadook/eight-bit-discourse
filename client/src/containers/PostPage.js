@@ -4,26 +4,25 @@ import { bindActionCreators } from 'redux';
 import '../styles/css/App.css';
 import CommentForm from './CommentForm';
 import CommentsList from '../components/CommentsList';
-import { fetchPost } from '../actions/postActions';
+// import { fetchPost } from '../actions/postActions';
 import { fetchComments } from '../actions/commentActions';
 
 class PostPage extends Component {
 
   componentDidMount() {
-    this.props.fetchPost({postId: this.props.post.id})
+    // this.props.fetchPost({postId: this.props.post.id})
     this.props.fetchComments(this.props.post.id)
   }
 
   render(props) {
-    console.log(this.props)
+    debugger
     const post = this.props.post;
-    console.log(post)
     return (
       <div className="mainPostDiv">
         <div className="postDiv">
           <h2 className="title">{post.title}</h2>
           <p className="game">{post.game}</p>
-          typeof post.author !== "undefined" ? <p className="author">By: {post.author.username}</p> : <p className="author">By: anonymous?</p>
+          <p className="author">By: {post.author.username}</p>
           <p className="rating">Rating: {post.rating} stars</p>
           <p className="discussion">Summary: {post.discussion}</p>
         </div>
@@ -38,17 +37,17 @@ class PostPage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const post = state.posts.find(post => post.id === parseInt(ownProps.match.params.id))
-  if (post) {
-    return { post }
+  if (state.posts !== []) {
+    const post = state.posts.find((post) => post.id === parseInt(ownProps.match.params.id))
+    return { post: post }
   } else {
     return { post: {} }
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  // debugger
   return bindActionCreators({
+    // fetchPost: fetchPost,
     fetchComments: fetchComments
   }, dispatch);
 };
