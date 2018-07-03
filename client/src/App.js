@@ -7,7 +7,8 @@ import PostPage from './containers/PostPage';
 import UserPostsPage from './containers/UserPostsPage';
 import { PageLayout } from './components/PageLayout'
 import { Welcome } from './components/Welcome';
-import { Footer } from './components/Footer';
+import { FooterBushes } from './components/FooterBushes'
+import { FooterBase } from './components/Footer';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPosts } from './actions/postActions';
@@ -28,7 +29,7 @@ class App extends Component {
           <Route exact path="/posts" component={PostsPage} />
           <Route exact path="/posts/:id" component={PostPage} />
           <Route exact path="/users/:id/posts" component={UserPostsPage} />
-          <Footer />
+          <FooterBase />
         </div>
       </Router>
     );
@@ -36,7 +37,6 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     posts: state.posts
   }

@@ -6817,7 +6817,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 20px; }
 
 /* Footer */
-.Footer {
+.FooterBase {
   background-color: #BA5425;
   font-weight: bold; }
 
