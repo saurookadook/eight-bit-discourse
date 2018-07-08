@@ -19,7 +19,7 @@ export function fetchPost({userId: userId, postId: postId}) {
   //   }
   // } else {
     return (dispatch) => {
-      dispatch({ type: 'LOADING_POST' });
+      dispatch({ type: 'LOADING_POSTS' });
       return fetch(`http://localhost:3001/posts/${postId}`)
         .then(response => response.json())
         .then(post => dispatch({ type: 'FETCH_POST', post: post }));

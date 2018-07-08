@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/scss/App.scss';
 
-const CommentsList = ({ comments }) => {
+const CommentsList = ({ post }) => {
+    const comments = post.comments
     if (comments) {
       const formattedComments = comments.map((comment, index) => {
         // debugger
