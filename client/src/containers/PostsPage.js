@@ -8,16 +8,16 @@ import PostForm from './PostForm.js';
 
 class PostsPage extends Component {
 
-  // componentDidMount() {
-  //   this.props.fetchPosts();
-  // }
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
 
   render(props) {
-
+    debugger
     return (
       <div className="PostsPage">
-        <PostForm />
-        <PostsList postsList={this.props.posts}/>
+      {typeof props === "undefined" ? ("") :
+        (<PostsList postsList={this.props.posts}/>) }
       </div>
     )
   }
@@ -27,10 +27,10 @@ const mapStateToProps = (state) => {
   return state
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//     fetchPosts: fetchPosts
-//   }, dispatch);
-// };
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchPosts: fetchPosts
+  }, dispatch);
+};
 
-export default connect(mapStateToProps)(PostsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(PostsPage);

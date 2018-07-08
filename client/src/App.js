@@ -9,14 +9,14 @@ import { PageLayout } from './components/PageLayout'
 import { Welcome } from './components/Welcome';
 import { Footer } from './components/Footer';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { fetchPosts } from './actions/postActions';
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.fetchPosts();
-  }
+  // componentDidMount() {
+  //   this.props.fetchPosts();
+  // }
 
   render() {
     return (
@@ -36,16 +36,13 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // debugger
-  return {
-    posts: state.posts
-  }
+  return state
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchPosts: fetchPosts
-  }, dispatch);
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators({
+//     fetchPosts: fetchPosts
+//   }, dispatch);
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

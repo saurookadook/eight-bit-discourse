@@ -1,8 +1,8 @@
-// import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch'
 
 export function fetchPosts() {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_POSTS' });
+    dispatch({ type: 'LOADING_POSTS', loading: true });
     return fetch('http://localhost:3001/posts')
       .then(response => response.json())
       .then(posts => dispatch({ type: 'FETCH_POSTS', posts: posts }));
@@ -22,7 +22,7 @@ export function fetchPost({userId: userId, postId: postId}) {
       dispatch({ type: 'LOADING_POSTS' });
       return fetch(`http://localhost:3001/posts/${postId}`)
         .then(response => response.json())
-        .then(post => dispatch({ type: 'FETCH_POST', post: post }));
+        .then(post => {dispatch({ type: 'FETCH_POST', post: post })});
     }
   }
 // }

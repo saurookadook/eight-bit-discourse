@@ -7,7 +7,7 @@ import '../styles/css/App.css';
 import Post from '../components/Post';
 import CommentForm from './CommentForm';
 import CommentsList from '../components/CommentsList';
-// import { fetchPost } from '../actions/postActions';
+import { fetchPost } from '../actions/postActions';
 // import { fetchComments } from '../actions/commentActions';
 
 class PostPage extends Component {
@@ -36,7 +36,9 @@ class PostPage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return state
+  return {
+    post: state.post
+  }
   // debugger
   // if (state.posts !== []) {
   //   const post = state.posts.find((post) => post.id === parseInt(ownProps.match.params.id))
