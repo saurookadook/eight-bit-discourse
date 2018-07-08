@@ -16,7 +16,7 @@ class PostPage extends Component {
   //   this.props.fetchComments(this.props.post.id)
   }
 
-  render(props) {
+  render() {
     // use conditional to return loading page if `this.props.post` is empty/doesn't exist
     // hasData if (this.props.post exists?) { true } else { false } end
     // hasData ? <PostDisplay info={this.props} /> : <LoadingPage />

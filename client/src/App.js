@@ -10,7 +10,7 @@ import { Welcome } from './components/Welcome';
 import { Footer } from './components/Footer';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
-import { fetchPosts } from './actions/postActions';
+// import { fetchPosts } from './actions/postActions';
 
 class App extends Component {
 
@@ -35,9 +35,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return state
-}
+// const mapStateToProps = (state) => {
+//   debugger
+//   return state
+// }
 
 // const mapDispatchToProps = (dispatch) => {
 //   return bindActionCreators({
@@ -45,4 +46,5 @@ const mapStateToProps = (state) => {
 //   }, dispatch);
 // };
 
-export default connect(mapStateToProps)(App);
+// export default connect(mapStateToProps)(App);
+export default App;

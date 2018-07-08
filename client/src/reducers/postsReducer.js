@@ -1,14 +1,11 @@
-export default function postsReducer (state = {loading: false}, action) {
+export default function postsReducer (state = {loading: false, loaded: false, all: []}, action) {
   switch (action.type) {
     case 'LOADING_POSTS':
-      return Object.assign({}, state, { loading: true })
-      // return Object.assign({}, state, {loading: true})
+      return Object.assign({}, state, { loading: true, loaded: false })
     case 'FETCH_POSTS':
-      return Object.assign({}, state, { loading: false }, action.posts)
-      // return Object.assign({}, state, {loading: false}, posts: action.posts)
+      return { loading: false , loaded: true, all: action.posts }
     case 'FETCH_POST':
-      return Object.assign({}, state, { loading: false }, action.post)
-      // return Object.assign({}, state, {loading: false}, author: action.post.author, comments: action.post.comments)
+      return Object.assign({}, state, { loading: false, loaded: true }, action.post)
     case 'FETCH_USER_POSTS':
       return action.posts
     case 'FETCH_USER_POST':

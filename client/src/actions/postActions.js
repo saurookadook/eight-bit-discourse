@@ -2,10 +2,10 @@ import fetch from 'isomorphic-fetch'
 
 export function fetchPosts() {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_POSTS', loading: true });
+    dispatch({ type: 'LOADING_POSTS' });
     return fetch('http://localhost:3001/posts')
       .then(response => response.json())
-      .then(posts => dispatch({ type: 'FETCH_POSTS', posts: posts }));
+      .then(posts => {dispatch({ type: 'FETCH_POSTS', posts: posts })});
   }
 }
 

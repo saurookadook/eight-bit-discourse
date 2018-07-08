@@ -2,7 +2,7 @@ import React from 'react';
 import PostListItem from './PostListItem'
 
 const PostsList = ({ postsList }) => {
-
+  
   if (postsList) {
     const posts = postsList.map((post, index) => {
       return (

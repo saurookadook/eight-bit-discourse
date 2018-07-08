@@ -1,30 +1,44 @@
 import React, { Component } from 'react';
 // import '../components/NavBar.css';
-import { fetchPosts } from '../actions/postActions.js';
+import { fetchPosts } from '../actions/postActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import PostsList from '../components/PostsList.js';
-import PostForm from './PostForm.js';
+import { LoadingPage } from '../components/LoadingPage'
+import PostForm from './PostForm';
+import PostsList from '../components/PostsList';
 
 class PostsPage extends Component {
 
   componentDidMount() {
+    // debugger
     this.props.fetchPosts();
   }
 
-  render(props) {
-    debugger
+  render() {
+    // let hasData = function() {
+    //   return this.props.posts.loaded && !this.props.posts.loading
+    // }
+
     return (
       <div className="PostsPage">
-      {typeof props === "undefined" ? ("") :
-        (<PostsList postsList={this.props.posts}/>) }
+        {(this.props.posts.loaded && !this.props.posts.loading) ? (
+          <React.Fragment>
+            <PostForm />
+            <PostsList postsList={this.props.posts.all} />
+          </React.Fragment>
+        ) : (
+          <LoadingPage />
+        )}
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return state
+  debugger
+  return {
+    posts: state.posts
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
