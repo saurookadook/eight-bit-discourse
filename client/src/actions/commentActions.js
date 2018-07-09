@@ -1,3 +1,6 @@
+import fetch from 'cross-fetch';
+// import fetch from 'isomorphic-fetch';
+
 // export function fetchComments(postId) {
 //   return (dispatch) => {
 //     dispatch({ type: 'LOADING_COMMENTS' });
@@ -14,7 +17,7 @@ export function submitComment(formContent) {
     return fetch(`http://localhost:3001/posts/1/comments`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({content: formContent})})
+      body: JSON.stringify({comment: formContent})})
       .then(response => response.json())
       .then(comment => {dispatch({ type: 'SUBMIT_COMMENT', comment: comment })});
   }

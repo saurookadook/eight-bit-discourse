@@ -11,43 +11,49 @@ class PostForm extends Component {
     this.state = {
       title: '',
       game: '',
+      authorName: '',
       discussion: '',
       rating: ''
     }
   }
 
-  onChangeHandler = (event) => {
+  onChangeHandler = event => {
     const { value, name } = event.target
     this.setState({
       [name]: value
     });
   }
 
-  onSubmitHandler = (event) => {
+  onSubmitHandler = event => {
     event.preventDefault();
-
+    // debugger
     this.props.submitPost(this.state);
       this.refs.titleInput.value = '';
       this.refs.gameInput.value = '';
+      this.refs.authorInput.value = '';
       this.refs.discussionInput.value = '';
       this.refs.ratingInput.value = '';
   }
 
   render() {
+    // debugger
     return (
       <div className="form">
         <h3>Anything to discuss with the hive mind?</h3>
         <form id="post-form" onSubmit={this.onSubmitHandler}>
           <p>
-            <input ref="titleInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler}/>
-            <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onChange={this.onChangeHandler}/>
+            <input ref="titleInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler} />
+            <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onChange={this.onChangeHandler} />
           </p>
           <p>
-            <textarea ref="discussionInput" name="discussion" className="textarea" placeholder="Your thoughts...." value={this.state.discussion} onChange={this.onChangeHandler}/>
+            <input ref="authorInput" type="text" name="authorName" placeholder="Author" value={this.state.author} onChange={this.onChangeHandler} />
+          </p>
+          <p>
+            <textarea ref="discussionInput" name="discussion" className="textarea" placeholder="Your thoughts...." value={this.state.discussion} onChange={this.onChangeHandler} />
           </p>
           <p>
             How would you rate this game?
-            <input ref="ratingInput" type="number" name="rating" placeholder="Rating (1-10)" value={this.state.rating} onChange={this.onChangeHandler}/>
+            <input ref="ratingInput" type="number" name="rating" placeholder="Rating (1-10)" value={this.state.rating} onChange={this.onChangeHandler} />
           </p>
           <button type="submit">Add a post</button>
         </form>
