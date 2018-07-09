@@ -1,11 +1,9 @@
 import React from 'react';
 import '../styles/scss/App.scss';
 
-const CommentsList = ({ post }) => {
-    const comments = post.comments
+const CommentsList = ({ comments }) => {
     if (comments) {
       const formattedComments = comments.map((comment, index) => {
-        // debugger
         return (
           <div className="commentDiv" key={index}>
             <p><strong>{comment.user.username}</strong>: {comment.content}</p>

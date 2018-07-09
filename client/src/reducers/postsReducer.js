@@ -4,15 +4,8 @@ export default function postsReducer (state = {loading: false, loaded: false, al
       return Object.assign({}, state, { loading: true, loaded: false })
     case 'FETCH_POSTS':
       return { loading: false , loaded: true, all: action.posts }
-    case 'FETCH_POST':
-      return Object.assign({}, state, { loading: false, loaded: true }, action.post)
     case 'FETCH_USER_POSTS':
       return action.posts
-    case 'FETCH_USER_POST':
-      return action.post
-    case 'SUBMIT_POST':
-      return [...state, action.post]
-    case 'UPDATE_POST':
     default:
       return state;
   }

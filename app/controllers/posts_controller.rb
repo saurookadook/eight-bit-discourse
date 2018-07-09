@@ -6,8 +6,7 @@ class PostsController < ApplicationController
     end
 
     def show
-      # binding.pry
-      @post = Post.find(params[:id].to_i)
+      @post = Post.find(params[:id])
 
       render json: @post, include: ['author', 'comments', 'comments.user']
     end
@@ -35,8 +34,7 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :game, :discussion, :rating, :user_id,
-        user_attributes: [:id, :username, :email, :password],
-        comments_attributes: [:user_id, :post_id, :content]
+        user_attributes: [:id, :username, :email, :password]
         )
     end
 

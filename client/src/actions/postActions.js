@@ -19,8 +19,10 @@ export function fetchPost(post) {
   //   }
   // } else {
     return (dispatch) => {
-      dispatch({ type: 'LOADING_POSTS' });
+      dispatch({ type: 'LOADING_POST' });
       return fetch(`http://localhost:3001/posts/${post.postId}`)
+        // headers
+        // body
         .then(response => response.json())
         .then(post => {dispatch({ type: 'FETCH_POST', post: post })});
     }
