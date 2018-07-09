@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Post from './Post';
 import CommentsList from './CommentsList';
-import CommentForm from './CommentForm';
+import CommentForm from '../containers/CommentForm';
 import '../styles/css/App.css'
 
 const PostDisplay = ({ props }) => {

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
     def show
       # binding.pry
-      @post = Post.find(post_params)
+      @post = Post.find(params[:id].to_i)
 
       render json: @post, include: ['author', 'comments', 'comments.user']
     end

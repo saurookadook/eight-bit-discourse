@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../styles/css/App.css';
-import PostDisplay from 'react';
-import { LoadingPage } from 'react';
+import PostDisplay from '../components/PostDisplay';
+import { LoadingPage } from '../components/LoadingPage';
 // import Post from '../components/Post';
 // import CommentForm from './CommentForm';
 // import CommentsList from '../components/CommentsList';
@@ -13,7 +13,7 @@ import { fetchPost } from '../actions/postActions';
 class PostPage extends Component {
   componentDidMount() {
     debugger
-    this.props.fetchPost({postId: this.props.post.id})
+    this.props.fetchPost(this.props.post)
   }
 
   render() {
@@ -43,12 +43,16 @@ class PostPage extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   debugger
-  if (typeof state.post.all !== "undefined") {
+  const postId = parseInt(ownProps.match.params.id)
+  debugger
+  if (typeof state.post.all !== "undefined") { // somehow, `state.post` is getting set with `all` after hitting `fetchPost`
     return {
       post: {
         loading: false,
-        loaded: false
+        loaded: false,
+        postId: postId
       }
+
     }
   } else {
       return {
