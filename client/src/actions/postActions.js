@@ -9,7 +9,7 @@ export function fetchPosts() {
   }
 }
 
-export function fetchPost({userId: userId, postId: postId}) {
+export function fetchPost(idObj) {
   // if (userId != null || undefined) {
   //   return (dispatch) => {
   //     dispatch({ type: 'LOADING_USER_POST' });
@@ -20,7 +20,7 @@ export function fetchPost({userId: userId, postId: postId}) {
   // } else {
     return (dispatch) => {
       dispatch({ type: 'LOADING_POSTS' });
-      return fetch(`http://localhost:3001/posts/${postId}`)
+      return fetch(`http://localhost:3001/posts/${idObj[postId]}`)
         .then(response => response.json())
         .then(post => {dispatch({ type: 'FETCH_POST', post: post })});
     }

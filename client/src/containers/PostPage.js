@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../styles/css/App.css';
-// import PostDisplay from 'react';
-// import LoadingPage from 'react';
-import Post from '../components/Post';
-import CommentForm from './CommentForm';
-import CommentsList from '../components/CommentsList';
+import PostDisplay from 'react';
+import { LoadingPage } from 'react';
+// import Post from '../components/Post';
+// import CommentForm from './CommentForm';
+// import CommentsList from '../components/CommentsList';
 import { fetchPost } from '../actions/postActions';
 // import { fetchComments } from '../actions/commentActions';
 
@@ -24,18 +24,26 @@ class PostPage extends Component {
     // debugger
     // const post = this.props.post;
     return (
-      <div className="mainPostDiv">
-        <Post post={this.props.post} />
-        <div className="comments">
-          <CommentsList comments={this.props.post} />
-          <CommentForm postId={this.props.match.params.id} />
-        </div>
+      <div className="PostPage">
+        {(this.props.post.loaded && !this.props.post.loading) ? (
+          <PostDisplay props={this.props} />
+        ) : (
+          <LoadingPage />
+        )}
       </div>
+
+      // <div className="mainPostDiv">
+      //   <Post post={this.props.post} />
+      //   <div className="comments">
+      //     <CommentsList comments={this.props.post} />
+      //     <CommentForm postId={this.props.match.params.id} />
+      //   </div>
+      // </div>
     )
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     post: state.post
   }
@@ -55,4 +63,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-export default connect(mapStateToProps)(PostPage);
+export default connect(mapStateToProps, mapDispatchToProps)(PostPage);

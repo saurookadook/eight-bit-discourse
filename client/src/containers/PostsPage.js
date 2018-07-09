@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { fetchPosts } from '../actions/postActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { LoadingPage } from '../components/LoadingPage'
 import PostForm from './PostForm';
 import PostsList from '../components/PostsList';
+import { LoadingPage } from '../components/LoadingPage';
 
 class PostsPage extends Component {
 
@@ -35,7 +35,6 @@ class PostsPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     posts: state.posts
   }

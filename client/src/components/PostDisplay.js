@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Post from './Post';
+import CommentsList from './CommentsList';
+import CommentForm from './CommentForm';
+import '../styles/css/App.css'
 
 const PostDisplay = ({ props }) => {
+  debugger
   return (
-    <div className="mainPostDiv">
+    <div className="PostDislay">
       <Post post={props.post} />
       <div className="comments">
         <CommentsList comments={props.post.comments} />
@@ -11,3 +16,5 @@ const PostDisplay = ({ props }) => {
     </div>
   )
 }
+
+export default PostDisplay;
