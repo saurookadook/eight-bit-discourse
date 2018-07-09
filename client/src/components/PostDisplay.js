@@ -5,7 +5,6 @@ import CommentForm from './CommentForm';
 import '../styles/css/App.css'
 
 const PostDisplay = ({ props }) => {
-  debugger
   return (
     <div className="PostDislay">
       <Post post={props.post} />

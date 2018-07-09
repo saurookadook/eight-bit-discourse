@@ -20,7 +20,7 @@ export function fetchPost(idObj) {
   // } else {
     return (dispatch) => {
       dispatch({ type: 'LOADING_POSTS' });
-      return fetch(`http://localhost:3001/posts/${idObj[postId]}`)
+      return fetch(`http://localhost:3001/posts/${idObj.postId}`)
         .then(response => response.json())
         .then(post => {dispatch({ type: 'FETCH_POST', post: post })});
     }

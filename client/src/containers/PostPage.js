@@ -12,8 +12,8 @@ import { fetchPost } from '../actions/postActions';
 
 class PostPage extends Component {
   componentDidMount() {
+    debugger
     this.props.fetchPost({postId: this.props.post.id})
-  //   this.props.fetchComments(this.props.post.id)
   }
 
   render() {
@@ -21,8 +21,6 @@ class PostPage extends Component {
     // hasData if (this.props.post exists?) { true } else { false } end
     // hasData ? <PostDisplay info={this.props} /> : <LoadingPage />
 
-    // debugger
-    // const post = this.props.post;
     return (
       <div className="PostPage">
         {(this.props.post.loaded && !this.props.post.loading) ? (
@@ -43,13 +41,22 @@ class PostPage extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    post: state.post
-  }
-  // debugger
-  // if (state.posts !== []) {
-  //   const post = state.posts.find((post) => post.id === parseInt(ownProps.match.params.id))
+const mapStateToProps = (state, ownProps) => {
+  debugger
+  if (typeof state.post.all !== "undefined") {
+    return {
+      post: {
+        loading: false,
+        loaded: false
+      }
+    }
+  } else {
+      return {
+        post: state.post
+      }
+    }
+  // if (state.posts.all !== []) {
+  //   const post = state.posts.all.find((post) => post.id === parseInt(ownProps.match.params.id))
   //   return { post: post }
   // } else {
   //   return { post: {} }
@@ -59,7 +66,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     fetchPost: fetchPost
-    // fetchComments: fetchComments
   }, dispatch);
 };
 
