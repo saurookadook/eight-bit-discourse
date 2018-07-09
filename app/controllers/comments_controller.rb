@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    puts params
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     if @comment.valid?

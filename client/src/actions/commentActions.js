@@ -8,12 +8,14 @@
 // }
 
 export function submitComment(formContent) {
+  // need `postId` and
+  debugger
   return (dispatch) => {
-    return fetch(`http://localhost:3001/posts`, {
+    return fetch(`http://localhost:3001/posts/1/comments`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({content: formContent})})
       .then(response => response.json())
-      .then(comment => dispatch({ type: 'SUBMIT_COMMENT', comment: comment }));
+      .then(comment => {dispatch({ type: 'SUBMIT_COMMENT', comment: comment })});
   }
 }

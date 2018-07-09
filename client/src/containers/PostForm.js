@@ -17,8 +17,9 @@ class PostForm extends Component {
   }
 
   onChangeHandler = (event) => {
+    const { value, name } = event.target
     this.setState({
-      [event.target.name]: event.target.value
+      [name]: value
     });
   }
 
@@ -26,7 +27,7 @@ class PostForm extends Component {
     event.preventDefault();
 
     this.props.submitPost(this.state);
-      this.refs.nameInput.value = '';
+      this.refs.titleInput.value = '';
       this.refs.gameInput.value = '';
       this.refs.discussionInput.value = '';
       this.refs.ratingInput.value = '';
@@ -38,7 +39,7 @@ class PostForm extends Component {
         <h3>Anything to discuss with the hive mind?</h3>
         <form id="post-form" onSubmit={this.onSubmitHandler}>
           <p>
-            <input ref="nameInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler}/>
+            <input ref="titleInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler}/>
             <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onChange={this.onChangeHandler}/>
           </p>
           <p>

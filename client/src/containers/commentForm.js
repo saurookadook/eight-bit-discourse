@@ -9,20 +9,23 @@ class CommentForm extends Component {
     super(props)
 
     this.state = {
+      postId: props.postId,
       user: '',
       content: ''
     }
   }
 
-  onChange = (event) => {
+  handleOnChange = (event) => {
+    const { value, name } = event.target;
     this.setState({
-      [event.target.name]: event.target.value
+      [name]: value
     });
   }
 
-  handleSubmit = (e) => {
+  handleOnSubmit = (event) => {
+    // broken at the moment
     // debugger
-    e.preventDefault()
+    event.preventDefault()
     // debugger
     this.props.submitComment(this.state, this.props.postId);
     this.refs.userInput.value = '';
@@ -31,13 +34,13 @@ class CommentForm extends Component {
 
   render() {
     return (
-
       <div className="commentFormDiv">
         <h3>Add a comment:</h3>
-        <form className="commentForm" onSubmit={this.handleSubmit}>
+        <form className="commentForm" onSubmit={this.handleOnSubmit}>
           // maybe have this auto generate based on logged in user?
-          <input ref="userInput" type="text" name="user" placeholder="Name" value={this.state.user} onChange={this.onChange} />
-          <input ref="contentInput" type="text" name="content" placeholder="Content" value={this.state.content} onChange={this.onChange} />
+          <input ref="postId" type="hidden" name="post" value={this.props.postId} />
+          <input ref="userInput" type="text" name="user" placeholder="Name" value={this.state.user} onChange={this.handleOnChange} />
+          <input ref="contentInput" type="text" name="content" placeholder="Content" value={this.state.content} onChange={this.handleOnChange} />
           <button type="submit">Add a comment</button>
         </form>
       </div>

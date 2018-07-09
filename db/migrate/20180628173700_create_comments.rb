@@ -5,7 +5,7 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.integer :post_id
       t.text :content
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

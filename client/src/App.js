@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import './styles/css/App.css';
+import './styles/css/App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import  NavBar  from './components/NavBar';
+import NavBar from './components/NavBar';
 import PostsPage from './containers/PostsPage';
 import PostPage from './containers/PostPage';
 import UserPostsPage from './containers/UserPostsPage';
@@ -9,14 +9,8 @@ import { PageLayout } from './components/PageLayout'
 import { Welcome } from './components/Welcome';
 import { Footer } from './components/Footer';
 import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import { fetchPosts } from './actions/postActions';
 
 class App extends Component {
-
-  // componentDidMount() {
-  //   this.props.fetchPosts();
-  // }
 
   render() {
     return (
@@ -35,16 +29,4 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   debugger
-//   return state
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//     fetchPosts: fetchPosts
-//   }, dispatch);
-// };
-
-// export default connect(mapStateToProps)(App);
 export default App;

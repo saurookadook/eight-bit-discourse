@@ -5,12 +5,13 @@ import CommentForm from '../containers/CommentForm';
 import '../styles/css/App.css'
 
 const PostDisplay = ({ props }) => {
+  let postId = parseInt(props.match.params.id);
   return (
     <div className="PostDislay">
       <Post post={props.post} />
       <div className="comments">
         <CommentsList comments={props.post.comments} />
-        <CommentForm postId={props.match.params.id} />
+        <CommentForm postId={postId} />
       </div>
     </div>
   )

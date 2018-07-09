@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import '../components/NavBar.css';
 import { fetchPosts } from '../actions/postActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -10,7 +9,6 @@ import { LoadingPage } from '../components/LoadingPage';
 class PostsPage extends Component {
 
   componentDidMount() {
-    // debugger
     this.props.fetchPosts();
   }
 
@@ -35,6 +33,7 @@ class PostsPage extends Component {
 }
 
 const mapStateToProps = (state) => {
+  // debugger
   return {
     posts: state.posts
   }
