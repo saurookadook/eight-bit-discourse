@@ -34,12 +34,13 @@ class CommentForm extends Component {
 
   render() {
     // debugger
+    // eventually have user input default to logged in user? (or provide that information via hidden inputs?)
     return (
       <div className="commentFormDiv">
         <h3>Add a comment:</h3>
         <form className="commentForm" onSubmit={this.handleOnSubmit.bind(this)}>
-          // maybe have this auto generate based on logged in user?
           <input ref="postId" type="hidden" name="post" value={this.props.postId} />
+          // <input ref="userId" type="hidden" naame="userId" value={this.state.user.id} />
           <input ref="userInput" type="text" name="user" placeholder="Name" value={this.state.user} onChange={this.handleOnChange} />
           <input ref="contentInput" type="text" name="content" placeholder="Content" value={this.state.content} onChange={this.handleOnChange} />
           <button type="submit">Add a comment</button>

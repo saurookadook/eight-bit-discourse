@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   # might only need create, update, destroy...?
 
@@ -20,10 +21,16 @@ class CommentsController < ApplicationController
   end
 
   def create
-    puts params
-    puts comment_params
+    # fake user authentication
+    @user = User.find_by(username: params[:user])
+    if !@user
+      @user = User.create(username: params[:user], password: SecureRandom.hex(10))
+    end
+
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.build(comment_params)
+
+    # @comment = @post.comments.build(comment_params)
+    @comment = @post.comments.build(user_id: @user.id, post_id: params[:postId], content: params[:content])
     if @comment.valid?
       @comment.save
       render json: @comment
@@ -47,7 +54,7 @@ class CommentsController < ApplicationController
     # params.require(:comment).permit(:id, :content,
     #   user_attributes: [:id, :username]
     # )
-    params.require(:comment).permit(:user, :content, :post_id)
+    params.require(:comment).permit(:user, :content, :postId)
   end
 
 end

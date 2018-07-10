@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    skip_before_action :verify_authenticity_token, only: [:create]
 
     def index
       @posts = Post.order(created_at: :desc)
@@ -12,8 +13,12 @@ class PostsController < ApplicationController
     end
 
     def create
-      puts params
-      puts post_params
+      # fake user authentication
+      @user = User.find_by(username: params[:user])
+      if !@user
+        @user = User.create(username: params[:user], password: SecureRandom.hex(10))
+      end
+
       @post = Post.new(post_params)
       if @post.valid?
         @post.save
