@@ -22,5 +22,11 @@ module EightBitDiscourse
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end
+
+    config.action_dispatch.default_headers = {
+      'Access-Control-Allow-Origin' => 'http://localhost:3000',
+      'Access-Control-Request-Method' => %w{GET POST PUT PATCH DELETE OPTIONS HEAD}.join(",")
+    }
+    
   end
 end

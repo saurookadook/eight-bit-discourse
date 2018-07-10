@@ -40,7 +40,7 @@ class PostForm extends Component {
     return (
       <div className="form">
         <h3>Anything to discuss with the hive mind?</h3>
-        <form id="post-form" onSubmit={this.onSubmitHandler}>
+        <form id="post-form" onSubmit={this.onSubmitHandler.bind(this)}>
           <p>
             <input ref="titleInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler} />
             <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onChange={this.onChangeHandler} />

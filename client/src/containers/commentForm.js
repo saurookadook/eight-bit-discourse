@@ -9,7 +9,7 @@ class CommentForm extends Component {
     super(props)
 
     this.state = {
-      postId: props.postId,
+      // postId: props.postId,
       user: '',
       content: ''
     }
@@ -23,15 +23,17 @@ class CommentForm extends Component {
   }
 
   handleOnSubmit = event => {
-    debugger
+    // debugger
     event.preventDefault()
     // debugger
-    this.props.submitComment(this.state, this.props.postId);
+    let formContent = Object.assign({}, this.state, {postId: this.props.postId})
+    this.props.submitComment(formContent);
     this.refs.userInput.value = '';
     this.refs.contentInput.value = '';
   }
 
   render() {
+    // debugger
     return (
       <div className="commentFormDiv">
         <h3>Add a comment:</h3>

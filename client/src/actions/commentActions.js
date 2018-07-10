@@ -14,7 +14,7 @@ export function submitComment(formContent) {
   // need `postId` and
   debugger
   return (dispatch) => {
-    return fetch(`http://localhost:3001/posts/1/comments`, {
+    return fetch(`http://localhost:3001/posts/${formContent.postId}/comments`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({comment: formContent})})
