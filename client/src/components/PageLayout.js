@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/css/App.css';
 
 export const PageLayout = () =>
-    <div className="PageHeader bg-warning ">
+    <div className="PageHeader bg-warning container">
       <div className="row">
         <div className="AppDetails col-8 mt-4">
           <h1 className="AppName text-left ml-4">8-bit Discourse</h1>

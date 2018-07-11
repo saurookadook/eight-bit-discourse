@@ -13,13 +13,11 @@ class PostsPage extends Component {
   }
 
   render() {
-    // let hasData = function() {
-    //   return this.props.posts.loaded && !this.props.posts.loading
-    // }
+    let hasData = (this.props.posts.loaded && !this.props.posts.loading)
 
     return (
       <div className="PostsPage">
-        {(this.props.posts.loaded && !this.props.posts.loading) ? (
+        { hasData ? (
           <React.Fragment>
             <PostForm />
             <PostsList postsList={this.props.posts.all} />
