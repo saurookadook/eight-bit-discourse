@@ -4,5 +4,6 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, through: :posts
 
-  validates :username, :email, presence: true
+  # validates :username, :email, presence: true
+  validates :username, presence: true
 end

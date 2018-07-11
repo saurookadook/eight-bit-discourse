@@ -29,6 +29,7 @@ class PostPage extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   // find the post by id in posts
+  debugger
   if (!state.post.loaded) { // somehow, `state.post` is getting set with `all` after hitting `fetchPost`
     let postId = parseInt(ownProps.match.params.id)
     return {

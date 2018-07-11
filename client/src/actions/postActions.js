@@ -21,6 +21,7 @@ export function fetchPost(post) {
   // } else {
     return (dispatch) => {
       dispatch({ type: 'LOADING_POST' });
+      // dhis fucked up
       return fetch(`http://localhost:3001/posts/${post.postId}`)
         // headers
         // body

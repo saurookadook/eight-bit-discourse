@@ -10,6 +10,8 @@ export default function postReducer (state = { loading: false, loaded: false }, 
     case 'SUBMIT_POST':
       return [...state, action.post]
     case 'UPDATE_POST':
+      debugger
+      return Object.assign({}, state, { loading: false, loaded: true }, action.post);
     default:
       return state;
   }
