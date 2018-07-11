@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const PostListItem = ({ post }) => {
 
   return (
-    <div className="postDiv bg-success bg-white">
-      <Link to={`/posts/${post.id}`}>
+    <div className="CloudBubble p-2 my-2">
+      <Link className="text-dark" to={`/posts/${post.id}`}>
         <h3>{post.title}</h3>
       </Link>
       <div>

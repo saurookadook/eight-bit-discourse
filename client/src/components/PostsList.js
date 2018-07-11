@@ -2,7 +2,7 @@ import React from 'react';
 import PostListItem from './PostListItem'
 
 const PostsList = ({ postsList }) => {
-  
+
   if (postsList) {
     const posts = postsList.map((post, index) => {
       return (
@@ -11,7 +11,7 @@ const PostsList = ({ postsList }) => {
     })
 
     return (
-      <div className="postsList text-left ml-3">
+      <div className="postsList text-left ml-3 mt-3">
         <div>{posts}</div>
       </div>
     )

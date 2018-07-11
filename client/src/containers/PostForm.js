@@ -38,25 +38,31 @@ class PostForm extends Component {
   render() {
     // debugger
     return (
-      <div className="form">
-        <h3>Anything to discuss with the hive mind?</h3>
-        <form id="post-form" onSubmit={this.onSubmitHandler.bind(this)}>
-          <p>
-            <input ref="titleInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler} />
-            <input ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onChange={this.onChangeHandler} />
-          </p>
-          <p>
-            <input ref="authorInput" type="text" name="authorName" placeholder="Author" value={this.state.author} onChange={this.onChangeHandler} />
-          </p>
-          <p>
-            <textarea ref="discussionInput" name="discussion" className="textarea" placeholder="Your thoughts...." value={this.state.discussion} onChange={this.onChangeHandler} />
-          </p>
-          <p>
-            How would you rate this game?
-            <input ref="ratingInput" type="number" name="rating" placeholder="Rating (1-10)" value={this.state.rating} onChange={this.onChangeHandler} />
-          </p>
-          <button type="submit">Add a post</button>
-        </form>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="FormUp col-6 p-4 my-4">
+            <h3>Anything to discuss with the hive mind?</h3>
+            <form id="post-form" onSubmit={this.onSubmitHandler.bind(this)}>
+              <p>
+                <input className="mr-2" ref="titleInput" type="text" name="title" placeholder="Title/Topic" value={this.state.title} onChange={this.onChangeHandler} />
+                <input classname="ml-2" ref="gameInput" type="text" name="game" placeholder="Game" value={this.state.game} onChange={this.onChangeHandler} />
+              </p>
+              <p>
+                <input ref="authorInput" type="text" name="authorName" placeholder="Author" value={this.state.author} onChange={this.onChangeHandler} />
+              </p>
+              <p>
+                <textarea ref="discussionInput" name="discussion" className="textarea" placeholder="Your thoughts...." value={this.state.discussion} onChange={this.onChangeHandler} />
+              </p>
+              <p>
+                How would you rate this game?
+              </p>
+              <p>
+                <input ref="ratingInput" type="number" name="rating" placeholder="Rating (1-10)" value={this.state.rating} onChange={this.onChangeHandler} />
+              </p>
+              <button type="submit">Add a post</button>
+            </form>
+          </div>
+        </div>
       </div>
     )
   }

@@ -6815,12 +6815,12 @@ a.text-dark:hover, a.text-dark:focus {
 .PageHeaderImage {
   height: 100%; }
 
-/* Welcome */
-.Welcome {
+.CloudBubble {
   background: white;
   border: 1px solid #000;
   border-radius: 20px; }
 
+/* Welcome */
 /* Footer */
 footer {
   background-color: #BA5425;
@@ -6839,6 +6839,14 @@ footer {
 
 .OuterBushes {
   background: #C6F552; }
+
+/* Forms */
+.FormUp {
+  background: #E47134;
+  border-top: 5px solid #C43126;
+  border-left: 5px solid #C43126;
+  border-right: 5px solid #020000;
+  border-bottom: 5px solid #020000; }
 
 body {
   background: linear-gradient(to bottom right, #6695F5, gray);
