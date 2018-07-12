@@ -14,14 +14,14 @@ class PostsController < ApplicationController
 
     def create
       # fake user authentication
-      @user = User.find_by(username: params[:authorName])
+      @user = User.find_by(username: params[:post][:authorName])
       if !@user
-        @user = User.create(username: params[:authorName], password: SecureRandom.hex(10))
+        @user = User.create(username: params[:post][:authorName], password: SecureRandom.hex(10))
       end
 
-      binding.pry
-      @post = @user.posts.build(title: params[:post][], game: params[:post][], discussion: params[:post][], rating: params[:post][], user_id: @user.id)
-
+      # binding.pry
+      @post = @user.posts.build(title: params[:post][:title], game: params[:post][:game], discussion: params[:post][:discussion], rating: params[:post][:rating], user_id: @user.id)
+      
       if @post.valid?
         @post.save
         @posts = Post.order(created_at: :desc)

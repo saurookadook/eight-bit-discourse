@@ -37,7 +37,6 @@ const mapStateToProps = (state, ownProps) => {
         loading: false,
         loaded: false,
         postId: postId
-        // postBody: postBody
       }
     }
   } else {
