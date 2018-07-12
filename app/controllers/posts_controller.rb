@@ -14,15 +14,19 @@ class PostsController < ApplicationController
 
     def create
       # fake user authentication
-      @user = User.find_by(username: params[:user])
+      @user = User.find_by(username: params[:authorName])
       if !@user
-        @user = User.create(username: params[:user], password: SecureRandom.hex(10))
+        @user = User.create(username: params[:authorName], password: SecureRandom.hex(10))
       end
 
-      @post = Post.new(post_params)
+      binding.pry
+      @post = @user.posts.build(title: params[:post][], game: params[:post][], discussion: params[:post][], rating: params[:post][], user_id: @user.id)
+
       if @post.valid?
         @post.save
-        render json: @post
+        @posts = Post.order(created_at: :desc)
+        # find way to do this with just rendering @post
+        render json: @posts, include: ['author']
       else
         render json: { message: "There was an issue submitting your post, please try again."}
       end

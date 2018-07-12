@@ -35,9 +35,7 @@ export function submitPost(formContent) {
   return (dispatch) => {
     return fetch(`http://localhost:3001/posts`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({post: formContent})})
       .then(response => response.json())
       .then(post => dispatch({ type: 'SUBMIT_POST', post: post }));

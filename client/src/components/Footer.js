@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/css/App.css';
 
 export const Footer = () =>
-    <div className="fixed-bottom pt-3">
+    <div className="fixed-bottom pt-3 clearfix">
       <div className="container">
         <div className="row justify-content-center">
           <h4 className="FooterBushes OuterBushes col-3 mb-0 py-2">About</h4>

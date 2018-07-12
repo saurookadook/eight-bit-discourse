@@ -11,7 +11,7 @@ const PostsList = ({ postsList }) => {
     })
 
     return (
-      <div className="postsList text-left ml-3 mt-3">
+      <div className="PostsList text-left mt-3 ml-3">
         <div>{posts}</div>
       </div>
     )
