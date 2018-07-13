@@ -5,7 +5,7 @@ export default function comments (state = [], action) {
       return action.comments;
     case 'SUBMIT_COMMENT':
       // push comment into post.comments collection
-      debugger
+      // debugger
       return Object.assign({}, state, { loading: false, loaded: true }, action.post);
     case 'UPDATE_COMMENT':
       return action.comment

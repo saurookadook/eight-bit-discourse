@@ -39,6 +39,6 @@ export function submitPost(formContent) {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({post: formContent})})
       .then(response => response.json())
-      .then(post => dispatch({ type: 'SUBMIT_POST', post: post }));
+      .then(posts => dispatch({ type: 'UPDATE_POSTS', posts: posts }));
   }
 }
