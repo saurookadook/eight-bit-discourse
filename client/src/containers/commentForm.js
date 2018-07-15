@@ -37,14 +37,18 @@ class CommentForm extends Component {
     // eventually have user input default to logged in user? (or provide that information via hidden inputs?)
     // <input ref="userId" type="hidden" naame="userId" value={this.state.user.id} />
     return (
-      <div className="commentFormDiv">
-        <h3>Add a comment:</h3>
-        <form className="commentForm" onSubmit={this.handleOnSubmit.bind(this)}>
-          <input ref="postId" type="hidden" name="post" value={this.props.postId} />
-          <input ref="userInput" type="text" name="user" placeholder="Name" value={this.state.user} onChange={this.handleOnChange} />
-          <input ref="contentInput" type="text" name="content" placeholder="Content" value={this.state.content} onChange={this.handleOnChange} />
-          <button type="submit">Add a comment</button>
-        </form>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="FormUp col-8 p-3 my-4">
+            <h3>Add a comment:</h3>
+            <form className="commentForm" onSubmit={this.handleOnSubmit.bind(this)}>
+              <input ref="postId" type="hidden" name="post" value={this.props.postId} />
+              <input ref="userInput" type="text" name="user" placeholder="Name" value={this.state.user} onChange={this.handleOnChange} />
+              <input ref="contentInput" className="mx-2" type="text" name="content" placeholder="Content" value={this.state.content} onChange={this.handleOnChange} />
+              <button type="submit">Add a comment</button>
+            </form>
+          </div>
+        </div>
       </div>
     )
   }
