@@ -32,6 +32,7 @@ export function fetchPost(post) {
 // }
 
 export function submitPost(formContent) {
+
   return (dispatch) => {
     dispatch({ type: 'SUBMITTING_POST' })
     return fetch(`http://localhost:3001/posts`, {
@@ -41,4 +42,5 @@ export function submitPost(formContent) {
       .then(response => response.json())
       .then(posts => dispatch({ type: 'UPDATE_POSTS', posts: posts }));
   }
+
 }

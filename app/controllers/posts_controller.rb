@@ -19,9 +19,8 @@ class PostsController < ApplicationController
         @user = User.create(username: params[:post][:authorName], password: SecureRandom.hex(10))
       end
 
-      # binding.pry
       @post = @user.posts.build(title: params[:post][:title], game: params[:post][:game], discussion: params[:post][:discussion], rating: params[:post][:rating], user_id: @user.id)
-
+      # binding.pry
       if @post.valid?
         @post.save
         @posts = Post.order(created_at: :desc)

@@ -27,12 +27,15 @@ class PostForm extends Component {
   onSubmitHandler = event => {
     event.preventDefault();
     // debugger
+
     this.props.submitPost(this.state);
+      // find way to set these all back to default
       this.refs.titleInput.value = '';
       this.refs.gameInput.value = '';
       this.refs.authorInput.value = '';
       this.refs.discussionInput.value = '';
       this.refs.ratingInput.value = '';
+
   }
 
   render() {
