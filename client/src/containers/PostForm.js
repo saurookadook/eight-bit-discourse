@@ -30,6 +30,7 @@ class PostForm extends Component {
 
     this.props.submitPost(this.state);
       // find way to set these all back to default
+      // event.currentTarget.reset()
       this.refs.titleInput.value = '';
       this.refs.gameInput.value = '';
       this.refs.authorInput.value = '';
