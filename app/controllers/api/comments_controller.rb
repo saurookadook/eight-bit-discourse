@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   # might only need create, update, destroy...?

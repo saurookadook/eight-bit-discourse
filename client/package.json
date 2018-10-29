@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:3001/api",
   "dependencies": {
     "bootstrap": "^4.1.1",
     "cross-fetch": "^2.2.2",
