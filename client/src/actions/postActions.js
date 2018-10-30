@@ -4,7 +4,7 @@ import fetch from 'cross-fetch';
 export function fetchPosts() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_POSTS' });
-    return fetch('http://localhost:3001/api/posts')
+    return fetch('http://localhost:3001/posts')
       .then(response => response.json())
       .then(posts => {dispatch({ type: 'FETCH_POSTS', posts: posts })});
   }
@@ -22,7 +22,7 @@ export function fetchPost(post) {
     return (dispatch) => {
       dispatch({ type: 'LOADING_POST' });
       // dhis fucked up
-      return fetch(`http://localhost:3001/api/posts/${post.postId}`)
+      return fetch(`http://localhost:3001/posts/${post.postId}`)
         // headers
         // body
         .then(response => response.json())
