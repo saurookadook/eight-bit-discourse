@@ -3,6 +3,7 @@ import PostListItem from './PostListItem'
 
 const PostsList = ({ postsList }) => {
 
+  // debugger
   if (postsList) {
     const posts = postsList.map((post, index) => {
       return (
