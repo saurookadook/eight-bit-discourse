@@ -2,13 +2,20 @@ import fetch from 'cross-fetch';
 // import fetch from 'isomorphic-fetch';
 import * as types from './actionTypes';
 
+const setPosts = (posts) => ({
+  type: types.SET_POSTS,
+  payload: {
+    posts
+  }
+})
+
 export function fetchPosts() {
   return (dispatch) => {
     dispatch({ type: types.LOADING_POSTS });
     return fetch('http://localhost:3001/posts')
       .then(response => response.json())
       .then(posts => {dispatch({ 
-        type: types.LOADING_POSTS, 
+        type: types.FETCH_POSTS, 
         posts: posts })
       });
   }

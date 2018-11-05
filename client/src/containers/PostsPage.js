@@ -31,7 +31,7 @@ class PostsPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  debugger
+  // debugger
   return {
     posts: state.posts
   }

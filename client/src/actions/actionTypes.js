@@ -5,6 +5,8 @@ export const AUTHENTICATION_FAILURE = "AUTHENTICATION_FAILURE";
 export const LOGOUT = "LOGOUT";
 
 // POSTS
+export const SET_POST = "SET_POST";
+export const SET_POSTS = "SET_POSTS";
 export const FETCH_POST = "FETCH_POST";
 export const FETCH_POSTS = "FETCH_POSTS";
 export const SUBMITTING_POST = "SUBMITTING_POST";
