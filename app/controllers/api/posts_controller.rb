@@ -1,5 +1,7 @@
-class API::PostsController < ApplicationController
-    skip_before_action :verify_authenticity_token, only: [:create]
+module Api
+  class PostsController < ApplicationController
+    # skip_before_action :verify_authenticity_token, except: [:destroy]
+    skip_before_action :verify_authenticity_token, only: [:create], raise: false
 
     def index
       @posts = Post.order(created_at: :desc)
@@ -37,7 +39,7 @@ class API::PostsController < ApplicationController
     def update
     end
 
-    def delete
+    def destroy
     end
 
     private
@@ -48,4 +50,5 @@ class API::PostsController < ApplicationController
         )
     end
 
+  end
 end
