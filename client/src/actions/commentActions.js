@@ -1,5 +1,6 @@
 import fetch from 'cross-fetch';
 // import fetch from 'isomorphic-fetch';
+import * as types from './actionTypes';
 
 // export function fetchComments(postId) {
 //   return (dispatch) => {
@@ -19,6 +20,6 @@ export function submitComment(formContent) {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({comment: formContent})})
       .then(response => response.json())
-      .then(post => {dispatch({ type: 'UPDATE_POST', post })});
+      .then(post => {dispatch({ type: types.UPDATE_POST, post })});
   }
 }

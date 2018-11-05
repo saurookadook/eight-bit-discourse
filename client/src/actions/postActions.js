@@ -1,12 +1,16 @@
 import fetch from 'cross-fetch';
 // import fetch from 'isomorphic-fetch';
+import * as types from './actionTypes';
 
 export function fetchPosts() {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_POSTS' });
+    dispatch({ type: types.LOADING_POSTS });
     return fetch('http://localhost:3001/posts')
       .then(response => response.json())
-      .then(posts => {dispatch({ type: 'FETCH_POSTS', posts: posts })});
+      .then(posts => {dispatch({ 
+        type: types.LOADING_POSTS, 
+        posts: posts })
+      });
   }
 }
 
@@ -20,13 +24,15 @@ export function fetchPost(post) {
   //   }
   // } else {
     return (dispatch) => {
-      dispatch({ type: 'LOADING_POST' });
+      dispatch({ type: types.LOADING_POST });
       // dhis fucked up
       return fetch(`http://localhost:3001/posts/${post.postId}`)
         // headers
         // body
         .then(response => response.json())
-        .then(post => {dispatch({ type: 'FETCH_POST', post: post })});
+        .then(post => {dispatch({ 
+          type: types.LOADING_POST, 
+          post: post })});
     }
   }
 // }
@@ -34,13 +40,15 @@ export function fetchPost(post) {
 export function submitPost(formContent) {
 
   return (dispatch) => {
-    dispatch({ type: 'SUBMITTING_POST' })
-    return fetch(`http://localhost:3001/api/posts`, {
+    dispatch({ type: types.SUBMITTING_POST })
+    return fetch(`http://localhost:3001/posts`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({post: formContent})})
       .then(response => response.json())
-      .then(posts => dispatch({ type: 'UPDATE_POSTS', posts: posts }));
+      .then(posts => dispatch({ 
+        type: types.UPDATE_POSTS, 
+        posts: posts }));
   }
 
 }
