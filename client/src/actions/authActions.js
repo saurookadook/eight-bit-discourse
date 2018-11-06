@@ -1,5 +1,5 @@
-import fetch from 'isomorphic-fetch';
-import { API_URL } from './apiUrl';
+// import fetch from 'isomorphic-fetch';
+// import { API_URL } from './apiUrl';
 import * as types from './actionTypes.js';
 
 const authRequest = () => {

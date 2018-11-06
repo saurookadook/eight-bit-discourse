@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './styles/css/App.css';
+import '../styles/css/App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
+import NavBar from '../components/NavBar';
 import PostsPage from './containers/PostsPage';
 import PostPage from './containers/PostPage';
-import UserPostsPage from './containers/UserPostsPage';
-import { PageLayout } from './components/PageLayout'
-import { Welcome } from './components/Welcome';
-import { Footer } from './components/Footer';
+// import UserPostsPage from './containers/UserPostsPage';
+import { PageLayout } from '../components/PageLayout'
+import { Welcome } from '../components/Welcome';
+import { Footer } from '../components/Footer';
 import { connect } from 'react-redux';
 
 class App extends Component {
