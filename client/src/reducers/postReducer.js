@@ -1,6 +1,7 @@
 import * as types from '../actions/actionTypes';
+import initialState from './initialState';
 
-export default function postReducer (state = { loading: false, loaded: false }, action) {
+export default function postReducer (state = initialState, action) {
   switch (action.type) {
     case types.LOADING_POST:
       return Object.assign({}, state, { loading: true, loaded: false })

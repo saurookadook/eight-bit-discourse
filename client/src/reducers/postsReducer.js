@@ -1,16 +1,10 @@
 import * as types from '../actions/actionTypes';
-
-const initialState = {
-  loading: false, 
-  loaded: false, 
-  all: []
-}
+import initialState from './initialState';
 
 // refactor
-const postsReducer = (state = initialState, action) => {
+export default function postsReducer(state = initialState, action) {
   switch (action.type) {
     case types.LOADING_POSTS:
-      // return Object.assign({}, state, { loading: true, loaded: false })
       // debugger
       return {
         ...state,
@@ -18,11 +12,11 @@ const postsReducer = (state = initialState, action) => {
       }
     case types.FETCH_POSTS:
       // debugger
-      // return { loading: false , loaded: true, all: action.posts }
       return {
         ...state,
         loading: false,
         loaded: true,
+        // TODO: refactor to `posts: [...action.posts]`?
         all: action.posts
       }
     // case 'SUBMITTING_POST':
@@ -36,5 +30,3 @@ const postsReducer = (state = initialState, action) => {
       return state;
   }
 }
-
-export default postsReducer;
