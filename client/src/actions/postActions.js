@@ -11,9 +11,10 @@ const setPosts = (posts) => ({
   }
 })
 
-export function fetchPosts() {
+export const fetchPosts = () => {
   return (dispatch) => {
     dispatch({ type: types.LOADING_POSTS });
+
     return fetch(`${API_URL}/posts`)
       .then(response => response.json())
       .then(posts => {dispatch({ 

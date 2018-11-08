@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchPosts } from '../actions/postActions';
+import * as actions from '../actions'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PostForm from './PostForm';
@@ -37,10 +37,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchPosts: fetchPosts
-  }, dispatch);
+const mapDispatchToProps = dispatch=> {
+  // debugger
+  return bindActionCreators(actions, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsPage);
