@@ -2,7 +2,7 @@ import fetch from 'cross-fetch';
 // import fetch from 'isomorphic-fetch';
 import * as types from './actionTypes';
 // TODO: refactor
-// import { API_URL } from './apiUrl';
+import { API_URL } from './apiUrl';
 
 const setPosts = (posts) => ({
   type: types.SET_POSTS,
@@ -14,7 +14,7 @@ const setPosts = (posts) => ({
 export function fetchPosts() {
   return (dispatch) => {
     dispatch({ type: types.LOADING_POSTS });
-    return fetch(`http://localhost:3001/posts`)
+    return fetch(`${API_URL}/posts`)
       .then(response => response.json())
       .then(posts => {dispatch({ 
         type: types.FETCH_POSTS, 
@@ -35,7 +35,7 @@ export function fetchPost(post) {
     return (dispatch) => {
       dispatch({ type: types.LOADING_POST });
       // dhis fucked up
-      return fetch(`http://localhost:3001/posts/${post.postId}`)
+      return fetch(`${API_URL}/posts/${post.postId}`)
         // headers
         // body
         .then(response => response.json())
@@ -50,7 +50,7 @@ export function submitPost(formContent) {
 
   return (dispatch) => {
     dispatch({ type: types.SUBMITTING_POST })
-    return fetch(`http://localhost:3001/posts`, {
+    return fetch(`${API_URL}/posts`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({post: formContent})})
