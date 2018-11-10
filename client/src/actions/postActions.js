@@ -41,7 +41,7 @@ export function fetchPost(post) {
         // body
         .then(response => response.json())
         .then(post => {dispatch({ 
-          type: types.LOADING_POST, 
+          type: types.FETCH_POST, 
           post: post })});
     }
   }

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import '../styles/css/App.css';
 import PostDisplay from '../components/PostDisplay';
 import { LoadingPage } from '../components/LoadingPage';
-import { fetchPost } from '../actions/postActions';
+import * as actions from '../actions';
 
 class PostPage extends Component {
 
@@ -46,10 +46,8 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchPost: fetchPost
-  }, dispatch);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(actions, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostPage);

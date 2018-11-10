@@ -1,19 +1,17 @@
 // import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
-// import { submitPost } from '../actions/postActions.js';
+// import * as actions from '../actions';
 // import '../styles/css/App.css';
 
-// class PostForm extends Component {
+// class SignUpForm extends Component {
 //   constructor(props) {
 //     super(props)
 
 //     this.state = {
-//       title: '',
-//       game: '',
-//       authorName: '',
-//       discussion: '',
-//       rating: ''
+//       username: '',
+//       email: '',
+//       password: ''
 //     }
 //   }
 
@@ -24,19 +22,16 @@
 //     });
 //   }
 
-//   onSignup = event => {
+//   onSignUp = event => {
 //     event.preventDefault();
 //     // debugger
 
 //     this.props.createUser(this.state);
 //       // find way to set these all back to default
-//       // event.currentTarget.reset()
-//       this.refs.titleInput.value = '';
-//       this.refs.gameInput.value = '';
-//       this.refs.authorInput.value = '';
-//       this.refs.discussionInput.value = '';
-//       this.refs.ratingInput.value = '';
-
+//       event.currentTarget.reset()
+//       // this.refs.username.value = '';
+//       // this.refs.email.value = '';
+//       // this.refs.password.value = '';
 //   }
 
 //   render() {
@@ -50,13 +45,13 @@
 //         <div className="row justify-content-center">
 //           <div className="FormUp col-6 p-4 my-4">
 //             <h3>Join the conversation!</h3>
-//             <form id="post-form" onSubmit={this.onSubmitHandler.bind(this)}>
+//             <form id="post-form" onSubmit={this.onSignUp.bind(this)}>
 //               <p>
-//                 <input className="mr-2" ref="username" type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.onSignup} />
-//                 <input className="ml-2" ref="email" type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.onSignup} />
+//                 <input className="mr-2" ref="username" type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.onChangeHandler} />
+//                 <input className="ml-2" ref="email" type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.onChangeHandler} />
 //               </p>
 //               <p>
-//                 <textarea ref="password" type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.onSignup} />
+//                 <textarea ref="password" type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.onChangeHandler} />
 //               </p>
 //               <button type="submit">Signup</button>
 //             </form>
@@ -67,10 +62,8 @@
 //   }
 // }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//     createUser: createUser
-//   }, dispatch)
+// const mapDispatchToProps = dispatch => {
+//   return bindActionCreators(actions, dispatch)
 // }
 
 // export default connect(null, mapDispatchToProps)(PostForm);

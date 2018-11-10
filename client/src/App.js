@@ -8,7 +8,6 @@ import PostPage from './containers/PostPage';
 import { PageLayout } from './components/PageLayout'
 import { Welcome } from './components/Welcome';
 import { Footer } from './components/Footer';
-// import { connect } from 'react-redux';
 
 class App extends Component {
   // TODO
