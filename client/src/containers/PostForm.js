@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { submitPost } from '../actions/postActions.js';
+import * as actions from '../actions/';
 import '../styles/css/App.css';
 
 class PostForm extends Component {
@@ -73,9 +73,7 @@ class PostForm extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    submitPost: submitPost
-  }, dispatch)
+  return bindActionCreators(actions, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(PostForm);
