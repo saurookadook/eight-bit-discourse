@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   scope module: 'api' do 
-    # post 'user_token' => 'user_token#create'
-    # post 'find_user' => 'users#find'
+    post 'user_token' => 'user_token#create'
+    post 'find_user' => 'users#find'
+    get 'signup' => 'users#new'
+    post 'signup' => 'users#create'
 
     resources :users, only: [:show] do
       resources :posts

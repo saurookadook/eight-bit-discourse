@@ -26,8 +26,9 @@ class SignupForm extends Component {
     event.preventDefault();
     // debugger
 
-    this.props.signup(this.state);
-      // find way to set these all back to default
+    this.props.signup(this.state)
+      // .then()
+      // only reset if logged in successfully
       event.currentTarget.reset()
       // this.refs.username.value = '';
       // this.refs.email.value = '';
@@ -47,11 +48,34 @@ class SignupForm extends Component {
             <h3>Join the conversation!</h3>
             <form id="post-form" onSubmit={this.onSignUp.bind(this)}>
               <p>
-                <input className="mr-2" ref="username" type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.onChangeHandler} />
-                <input className="ml-2" ref="email" type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.onChangeHandler} />
+                <input 
+                    className="mr-2" 
+                    ref="username" 
+                    type="text" 
+                    name="username" 
+                    placeholder="Username" 
+                    value={this.state.username} 
+                    onChange={this.onChangeHandler}
+                  />
+                <input 
+                  className="ml-2" 
+                  ref="email" 
+                  type="text" 
+                  name="email" 
+                  placeholder="Email" 
+                  value={this.state.email} 
+                  onChange={this.onChangeHandler} 
+                />
               </p>
               <p>
-                <textarea ref="password" type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.onChangeHandler} />
+                <textarea 
+                  ref="password" 
+                  type="password" 
+                  name="password" 
+                  placeholder="Password" 
+                  value={this.state.password}
+                  onChange={this.onChangeHandler} 
+                />
               </p>
               <button type="submit">Signup</button>
             </form>
