@@ -8,6 +8,7 @@ import PostPage from './containers/PostPage';
 import { PageLayout } from './components/PageLayout'
 import { Welcome } from './components/Welcome';
 import { Footer } from './components/Footer';
+import * as routes from './constants/routes';
 
 class App extends Component {
   // TODO
@@ -19,8 +20,8 @@ class App extends Component {
           <NavBar />
           <PageLayout />
           <div className="container">
-            <Route exact path="/" component={Welcome} />
-            <Route exact path="/posts" component={PostsPage} />
+            <Route exact path={routes.HOME} component={Welcome} />
+            <Route exact path={routes.POSTS} component={PostsPage} />
             <Route exact path="/posts/:id" component={PostPage} />
             
           </div>
