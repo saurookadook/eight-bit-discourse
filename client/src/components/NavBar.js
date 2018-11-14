@@ -12,7 +12,7 @@ class NavBar extends Component {
         <NavLink className="NavLink px-1 ml-4 text-light" to={routes.HOME}>Home</NavLink>
         <NavLink className="NavLink px-1 text-light" to={routes.POSTS}>Latest Posts</NavLink>
         <NavLink className="NavLink px-1 text-light" to="/users/:userId/posts">Your Posts</NavLink>
-        <NavLink className="NavLink px-1 ml-4 text-light" to={routes.SIGNUP}>Signup</NavLink>
+        <NavLink className="NavLink px-1 ml-4 text-light" to={routes.SIGN_UP}>SignUp</NavLink>
       </div>
     );
   };
