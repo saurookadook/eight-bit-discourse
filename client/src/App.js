@@ -14,6 +14,7 @@ import PostPage from './containers/PostPage';
 // import UserPostsPage from './containers/UserPostsPage';
 
 // User Auth
+import LogInForm from './containers/auth/LogIn';
 import SignUpForm from './containers/auth/SignUp';
 
 import * as routes from './constants/routes';
@@ -30,7 +31,8 @@ class App extends Component {
           <div className="container">
             <Route exact path={routes.HOME} component={Welcome} />
             <Route exact path={routes.POSTS} component={PostsPage} />
-            <Route exact path="/posts/:id" component={PostPage} />
+            <Route exact path={routes.POST} component={PostPage} />
+            <Route exact path={routes.LOG_IN} component={LogInForm} />
             <Route exact path={routes.SIGN_UP} component={SignUpForm} />
           </div>
           <Footer />

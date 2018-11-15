@@ -36,7 +36,6 @@ class SignupForm extends Component {
   onSignUp = event => {
     event.preventDefault();
     const { history } = this.props
-    // debugger
 
     this.props.signup(this.state)
       .then(() => {
@@ -45,12 +44,6 @@ class SignupForm extends Component {
       .catch(errors => {
         this.setState({ errors: errors })
       })
-      // .then()
-      // only reset if logged in successfully
-      
-      // this.refs.username.value = '';
-      // this.refs.email.value = '';
-      // this.refs.password.value = '';
   }
 
   render() {
@@ -100,7 +93,7 @@ class SignupForm extends Component {
                   onChange={this.onChangeHandler} 
                 />
               </p>
-              <button type="submit">Signup</button>
+              <button type="submit">Sign Up</button>
             </form>
           </div>
         </div>

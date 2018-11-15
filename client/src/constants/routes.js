@@ -1,8 +1,10 @@
 export const SIGN_UP = '/signup';
-export const SIGN_IN = '/signin';
+export const LOG_IN = '/login';
+export const LOG_OUT = '/logout'
 export const HOME = '/';
 export const ACCOUNT = '/account';
 export const POSTS = '/posts';
+export const POST = '/posts/:id';
 
 // TODO:
 // incorporate nested routes

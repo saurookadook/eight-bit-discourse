@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import './NavBar.css'
 
+const { authToken } = localStorage.token
+
 class NavBar extends Component {
   render() {
     return (
@@ -12,7 +14,16 @@ class NavBar extends Component {
         <NavLink className="NavLink px-1 ml-4 text-light" to={routes.HOME}>Home</NavLink>
         <NavLink className="NavLink px-1 text-light" to={routes.POSTS}>Latest Posts</NavLink>
         <NavLink className="NavLink px-1 text-light" to="/users/:userId/posts">Your Posts</NavLink>
-        <NavLink className="NavLink px-1 ml-4 text-light" to={routes.SIGN_UP}>SignUp</NavLink>
+
+        { authToken ? ( 
+          <NavLink className="NavLink px-1 ml-4 text-light" to={routes.LOG_OUT}>Logout</NavLink>
+         ) : (
+           <React.Fragment>
+            <NavLink className="NavLink px-1 ml-4 text-light" to={routes.LOG_IN}>Log In</NavLink>
+            <NavLink className="NavLink px-1 ml-4 text-light" to={routes.SIGN_UP}>Sign up</NavLink>
+          </React.Fragment>
+        )}
+        
       </div>
     );
   };
