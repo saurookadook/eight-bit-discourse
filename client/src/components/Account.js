@@ -8,9 +8,9 @@ import { compose } from 'recompose';
 
 const AccountPage = ({ authUser }) =>
   <div>
-    <h1>Account: {authUser.email}</h1>
-    <PasswordForgetForm />
-    <PasswordChangeForm />
+    <h1>Username: {authUser.email}</h1>
+    {/* <PasswordForgetForm />
+    <PasswordChangeForm /> */}
   </div>
 
 const mapStateToProps = (state) => ({
