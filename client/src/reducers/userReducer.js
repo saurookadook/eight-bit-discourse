@@ -16,7 +16,7 @@ export default function userReducer(state = initialState, action) {
         ...state,
         isAuthenticated: true,
         isAuthenticating: false,
-        currentUser: action.user,
+        user: action.user,
         token: action.token
       }
     case types.AUTHENTICATION_FAILURE:
@@ -24,7 +24,7 @@ export default function userReducer(state = initialState, action) {
           ...state,
           isAuthenticated: false,
           isAuthenticating: false,
-          currentUser: {},
+          user: {},
           token: null,
           errors: action.errors || []
       }
@@ -34,7 +34,7 @@ export default function userReducer(state = initialState, action) {
           ...state,
           isAuthenticated: false,
           isAuthenticating: false,
-          currentUser: {},
+          user: {},
           token: null
       }
     default:

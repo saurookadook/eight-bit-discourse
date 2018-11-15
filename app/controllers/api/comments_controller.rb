@@ -1,5 +1,4 @@
-module Api
-  class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
     skip_before_action :verify_authenticity_token, except: [:comments], raise: false
 
     # might only need create, update, destroy...?
@@ -16,9 +15,6 @@ module Api
       @comment = @post.comments.find(params[:comment_id])
 
       render json: @comment, include: ['user']
-    end
-
-    def new
     end
 
     def create
@@ -60,5 +56,4 @@ module Api
       params.require(:comment).permit(:user, :content, :postId)
     end
 
-  end
 end

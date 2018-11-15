@@ -33,7 +33,7 @@ export const logout = () => {
 }
 
 export const signup = (user) => {
-  const newUser = user
+  // debugger;
   return dispatch => {
     return fetch(`${API_URL}/users`, {
       method: "POST",
@@ -46,9 +46,9 @@ export const signup = (user) => {
       .then(response => response.json())
       .then(jresp => {
         dispatch(authenticate({
-          name: newUser.name,
-          email: newUser.email,
-          password: newUser.password})
+          name: user.username,
+          email: user.email,
+          password: user.password})
         );
       })
       .catch((errors) => {

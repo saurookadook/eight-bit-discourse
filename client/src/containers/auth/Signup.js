@@ -2,23 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions';
+
 import '../../styles/css/App.css';
+
+const INITIAL_STATE = {
+    username: '',
+    email: '',
+    password: '',
+    errors: []
+}
 
 class SignupForm extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      username: '',
-      email: '',
-      password: ''
-    }
+    this.state = { ...INITIAL_STATE }
   }
 
+  // onSignUp = event => {
+  //   const {
+  //     username,
+  //     email,
+  //     password
+  //   } = this.state;
+  // }
+
   onChangeHandler = event => {
-    const { value, name } = event.target
-    this.setState({
-      [name]: value
+    const { name, value } = event.target
+    this.setState({        
+        [name]: value
     });
   }
 
@@ -29,7 +41,7 @@ class SignupForm extends Component {
     this.props.signup(this.state)
       // .then()
       // only reset if logged in successfully
-      event.currentTarget.reset()
+      
       // this.refs.username.value = '';
       // this.refs.email.value = '';
       // this.refs.password.value = '';
@@ -48,6 +60,7 @@ class SignupForm extends Component {
             <h3>Join the conversation!</h3>
             <form id="post-form" onSubmit={this.onSignUp.bind(this)}>
               <p>
+                Username: 
                 <input 
                     className="mr-2" 
                     ref="username" 
@@ -56,7 +69,10 @@ class SignupForm extends Component {
                     placeholder="Username" 
                     value={this.state.username} 
                     onChange={this.onChangeHandler}
-                  />
+                />
+              </p>
+              <p>
+                Email:
                 <input 
                   className="ml-2" 
                   ref="email" 
@@ -68,7 +84,8 @@ class SignupForm extends Component {
                 />
               </p>
               <p>
-                <textarea 
+                Password:
+                <input 
                   ref="password" 
                   type="password" 
                   name="password" 

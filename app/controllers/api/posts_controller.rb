@@ -1,5 +1,4 @@
-module Api
-  class PostsController < ApplicationController
+class Api::PostsController < ApplicationController
     # skip_before_action :verify_authenticity_token, except: [:destroy]
     skip_before_action :verify_authenticity_token, only: [:create], raise: false
 
@@ -50,5 +49,4 @@ module Api
         )
     end
 
-  end
 end
