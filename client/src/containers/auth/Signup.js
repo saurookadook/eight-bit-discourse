@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import * as actions from '../../actions';
+import * as routes from '../../constants/routes';
 
 import '../../styles/css/App.css';
 
@@ -12,6 +14,10 @@ const INITIAL_STATE = {
     errors: []
 }
 
+// const byPropKey = (name, value) => () => ({
+//   [name]: value
+// })
+
 class SignupForm extends Component {
   constructor(props) {
     super(props)
@@ -19,15 +25,8 @@ class SignupForm extends Component {
     this.state = { ...INITIAL_STATE }
   }
 
-  // onSignUp = event => {
-  //   const {
-  //     username,
-  //     email,
-  //     password
-  //   } = this.state;
-  // }
-
   onChangeHandler = event => {
+    // TODO: refactor using byPropKey?
     const { name, value } = event.target
     this.setState({        
         [name]: value
@@ -36,9 +35,16 @@ class SignupForm extends Component {
 
   onSignUp = event => {
     event.preventDefault();
+    const { history } = this.props
     // debugger
 
     this.props.signup(this.state)
+      .then(() => {
+        history.push(routes.HOME)
+      })
+      .catch(errors => {
+        this.setState({ errors: errors })
+      })
       // .then()
       // only reset if logged in successfully
       

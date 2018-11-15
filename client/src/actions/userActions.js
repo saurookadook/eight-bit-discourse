@@ -74,7 +74,6 @@ export const authenticate = (credentials) => {
           return getUser(credentials)
       })
       .then((user) => {
-        console.log(user)
           dispatch(authSuccess(user, localStorage.token))
       })
       .catch((errors) => {
