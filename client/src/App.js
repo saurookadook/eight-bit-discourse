@@ -22,8 +22,9 @@ import * as routes from './constants/routes';
 import './styles/css/App.css';
 
 class App extends Component {
-  // TODO
+  // TODO: move mapStateToProps to NavBar?
   render() {
+
     const { isAuthenticated, user } = this.props
 
     const publicViews = (
@@ -51,7 +52,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <NavBar />
+          <NavBar isAuthenticated={isAuthenticated} />
           <PageLayout />
           { isAuthenticated ? protectedViews : publicViews }
           {/* <div className="container">

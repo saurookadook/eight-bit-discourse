@@ -5,11 +5,12 @@ import { NavLink } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import './NavBar.css'
 
-const { authToken } = localStorage.token
-console.log(localStorage.token);
+// TODO: this seems unnecessary?
+const { authToken } = localStorage.token;
 
 class NavBar extends Component {
   render() {
+    // debugger
     return (
       <div className="NavBar fixed-top text-left py-2">
         <NavLink className="NavLink px-1 ml-4 text-light" to={routes.HOME}>Home</NavLink>

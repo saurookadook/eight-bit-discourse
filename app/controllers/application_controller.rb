@@ -3,9 +3,9 @@ class ApplicationController < ActionController::API # might need `::API` instead
 
   # skip_before_action :verify_authenticity_token, raise: false
   # protect_from_forgery with: :exception, raise: false
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
 
-  after_action :set_csrf
+  # after_action :set_csrf
 
   private 
 
@@ -13,9 +13,9 @@ class ApplicationController < ActionController::API # might need `::API` instead
     !!current_user
   end
 
-  protected
+  # protected
 
-  def set_csrf
-    cookies['X-CSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
-  end
+  # def set_csrf
+  #   cookies['X-CSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
+  # end
 end

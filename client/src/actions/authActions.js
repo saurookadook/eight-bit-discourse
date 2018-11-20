@@ -38,10 +38,11 @@ export const signup = (user) => {
     return fetch(`${API_URL}/users`, {
       method: "POST",
       headers: {
-        "Accept":"application/json",
+        "Accept": "application/json",
         "Content-Type":"application/json"
       },
-      body: JSON.stringify({user: user})
+      body: JSON.stringify({user: user}),
+      // credentials: 'same-origin'
     })
       .then(response => response.json())
       .then(jresp => {
@@ -57,22 +58,25 @@ export const signup = (user) => {
   };
 }
 
-export const authenticate = (credentials) => {
+export const authenticate = (authCredentials) => {
+  // debugger
   return dispatch => {
     dispatch(authRequest())
     return fetch(`${API_URL}/user_token`, {
       method: "POST",
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({auth: credentials})
+      body: JSON.stringify({auth: authCredentials}),
+      // credentials: 'same-origin'
     })
       .then(res => res.json())
       .then(response => {
-          debugger
+          // debugger
           const token = response.jwt;          
           localStorage.setItem('token', token);
-          return getUser(credentials)
+          return getUser(authCredentials)
       })
       .then((user) => {
           dispatch(authSuccess(user, localStorage.token))
@@ -84,14 +88,16 @@ export const authenticate = (credentials) => {
   }
 }
 
-export const getUser = (credentials) => {
+export const getUser = (userCredentials) => {
   const request = new Request(`${API_URL}/find_user`, {
     method: "POST",
     headers: new Headers({
+      "Accept": "application/json",
       "Content-Type": "application/json",
       "Authorization": `Bearer ${localStorage.token}`,
     }),
-    body: JSON.stringify({user: credentials})
+    body: JSON.stringify({user: userCredentials}),
+    // credentials: 'same-origin'
   })
   // debugger
   // return fetch(`${API_URL}/find_user`, {
@@ -101,8 +107,9 @@ export const getUser = (credentials) => {
   //     "Authorization": `Bearer ${localStorage.token}`
   //   },
   //   body: JSON.stringify({
-  //     user: credentials
-  //   })
+  //     user: userCredentials
+  //   }),
+  //   credentials: 'same-origin'
   // })
   return fetch(request)
     .then(response => response.json())
