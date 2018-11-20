@@ -3,6 +3,7 @@ const initialState = {
   isAuthenticating: false,
   user: {},
   token: null,
+  errors: [],
   loading: false, 
   loaded: false, 
   // TODO: refactor

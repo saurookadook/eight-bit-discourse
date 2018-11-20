@@ -2,7 +2,7 @@ import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
 // refactor
-export default function userReducer(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case types.AUTHENTICATION_REQUEST:
       // debugger
