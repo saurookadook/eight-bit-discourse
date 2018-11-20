@@ -1,5 +1,6 @@
 class Api::CommentsController < ApplicationController
-    skip_before_action :verify_authenticity_token, except: [:comments], raise: false
+    # temp fix for auth_token issues
+    skip_before_action :verify_authenticity_token, raise: false
 
     # might only need create, update, destroy...?
 
@@ -18,6 +19,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def create
+      # TODO: implement user validation
       # fake user authentication
       @user = User.find_by(username: params[:comment][:user])
       # binding.pry

@@ -1,4 +1,3 @@
-module Api
-  class UserTokenController < Knock::AuthTokenController
-  end
+class Api::UserTokenController < Knock::AuthTokenController
+    # skip_before_action :verify_authenticity_token, raise: false
 end

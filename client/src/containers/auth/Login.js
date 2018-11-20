@@ -9,8 +9,7 @@ import '../../styles/css/App.css';
 
 const INITIAL_STATE = {
     email: '',
-    password: '',
-    errors: []
+    password: ''
 }
 
 // const byPropKey = (name, value) => () => ({

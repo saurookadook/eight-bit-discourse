@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
-    skip_before_action :verify_authenticity_token, only: [:create, :update], raise: false
+    # temp fix for auth_token issues
+    skip_before_action :verify_authenticity_token, raise: false
     before_action :set_user, only: [:show, :edit, :update, :delete]
 
     def index

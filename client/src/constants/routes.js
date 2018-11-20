@@ -5,6 +5,9 @@ export const HOME = '/';
 export const ACCOUNT = '/account';
 export const POSTS = '/posts';
 export const POST = '/posts/:id';
+export const USERS = '/users';
+export const USER = '/users/:id';
+export const USER_POSTS = '/users/:id/posts';
 
 // TODO:
 // incorporate nested routes

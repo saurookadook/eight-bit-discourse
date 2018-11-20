@@ -1,6 +1,8 @@
 class Api::PostsController < ApplicationController
-    # skip_before_action :verify_authenticity_token, except: [:destroy]
-    skip_before_action :verify_authenticity_token, only: [:create], raise: false
+    # temp fix for auth_token issues
+    skip_before_action :verify_authenticity_token, raise: false
+    # skip_before_action :verify_authenticity_token, except: [:destroy], raise: false
+    # skip_before_action :verify_authenticity_token, only: [:create], raise: false
 
     def index
       @posts = Post.order(created_at: :desc)
@@ -14,6 +16,7 @@ class Api::PostsController < ApplicationController
     end
 
     def create
+      # TODO: implement user validation
       # fake user authentication
       @user = User.find_by(username: params[:post][:authorName])
       if !@user

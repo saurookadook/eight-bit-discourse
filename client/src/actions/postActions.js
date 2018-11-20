@@ -54,7 +54,8 @@ export function submitPost(formContent) {
     return fetch(`${API_URL}/posts`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({post: formContent})})
+      body: JSON.stringify({post: formContent})
+    })
       .then(response => response.json())
       .then(posts => dispatch({ 
         type: types.UPDATE_POSTS, 

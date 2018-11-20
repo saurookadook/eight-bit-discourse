@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   scope module: 'api' do 
-    post 'user_token' => 'user_token#create'
-    post 'find_user' => 'users#find'
+    # post 'user_token' => 'user_token#create'
+    # post 'find_user' => 'users#find'
     get 'signup' => 'users#new'
     post 'signup' => 'users#create'
 
@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     # resources :comments
     resources :posts do
       resources :comments
+    end
+
+    resources :users, :posts, :comments do 
+      post 'user_token' => 'user_token#create'
+      post 'find_user' => 'users#find'
     end
 
     # resources :posts

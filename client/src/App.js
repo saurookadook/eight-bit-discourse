@@ -11,6 +11,7 @@ import { Footer } from './components/Footer';
 // Content
 import PostsPage from './containers/PostsPage';
 import PostPage from './containers/PostPage';
+import AccountPage from './components/AccountPage';
 // import UserPostsPage from './containers/UserPostsPage';
 
 // User Auth
@@ -22,7 +23,6 @@ import './styles/css/App.css';
 
 class App extends Component {
   // TODO
-  // <Route exact path="/users/:id/posts" component={UserPostsPage} />
   render() {
     const { isAuthenticated, user } = this.props
 
@@ -41,6 +41,9 @@ class App extends Component {
         <Route exact path={routes.HOME} component={Welcome} />
         <Route exact path={routes.POSTS} component={PostsPage} />
         <Route exact path={routes.POST} component={PostPage} />
+        {/* <Route exact path={routes.USERS} component={UsersList} /> */}
+        <Route exact path={routes.ACCOUNT} component={() => <AccountPage user={user} />} /> 
+        {/* <Route exact path={routes.USERS_POSTS} component={UserPostsPage} /> */}
         {/* <Route exact path={routes.LOG_OUT} component={LogOut} /> */}
       </div>
     )
