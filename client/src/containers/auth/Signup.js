@@ -18,7 +18,7 @@ const INITIAL_STATE = {
 //   [name]: value
 // })
 
-class SignupForm extends Component {
+class SignUpForm extends Component {
   constructor(props) {
     super(props)
 
@@ -106,4 +106,4 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators(actions, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(SignupForm);
+export default connect(null, mapDispatchToProps)(SignUpForm);

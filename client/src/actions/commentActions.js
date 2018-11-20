@@ -1,7 +1,7 @@
 import fetch from 'cross-fetch';
 // import fetch from 'isomorphic-fetch';
 import * as types from './actionTypes';
-// import { API_URL } from './apiUrl';
+// import { API_URL } from '../constants/apiUrl';
 
 // export function fetchComments(postId) {
 //   return (dispatch) => {

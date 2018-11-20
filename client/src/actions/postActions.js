@@ -2,14 +2,14 @@ import fetch from 'cross-fetch';
 // import fetch from 'isomorphic-fetch';
 import * as types from './actionTypes';
 // TODO: refactor
-import { API_URL } from './apiUrl';
+import { API_URL } from '../constants/apiUrl';
 
-const setPosts = (posts) => ({
-  type: types.SET_POSTS,
-  payload: {
-    posts
-  }
-})
+// const setPosts = (posts) => ({
+//   type: types.SET_POSTS,
+//   payload: {
+//     posts
+//   }
+// })
 
 export const fetchPosts = () => {
   return (dispatch) => {

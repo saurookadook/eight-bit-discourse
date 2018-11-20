@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { API_URL } from './apiUrl';
+import { API_URL } from '../constants/apiUrl';
 import * as types from './actionTypes.js';
 
 const authRequest = () => {
@@ -68,9 +68,9 @@ export const authenticate = (credentials) => {
       body: JSON.stringify({auth: credentials})
     })
       .then(res => res.json())
-      .then((response) => {
-          const token = response.jwt;
+      .then(response => {
           debugger
+          const token = response.jwt;          
           localStorage.setItem('token', token);
           return getUser(credentials)
       })

@@ -24,8 +24,8 @@ export default function postsReducer(state = initialState, action) {
     case types.UPDATE_POSTS:
       // debugger
       return Object.assign({}, state, { all: action.posts })
-    case 'FETCH_USER_POSTS':
-      return action.posts
+    // case 'FETCH_USER_POSTS':
+    //   return action.posts
     default:
       return state;
   }

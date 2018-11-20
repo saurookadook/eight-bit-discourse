@@ -42,6 +42,7 @@ class LogInForm extends Component {
       })
       .catch(errors => {
         this.setState({ errors: errors })
+        window.alert("Sorry, there was an issue logging you in. Please try again.")
       })
   }
 
