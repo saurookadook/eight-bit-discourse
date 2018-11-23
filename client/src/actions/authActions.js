@@ -63,15 +63,29 @@ export const authenticate = (authCredentials) => {
   return dispatch => {
     dispatch(authRequest())
     return fetch(`${API_URL}/user_token`, {
-      method: "POST",
+      method: 'POST',
+      mode: 'no-cors',
+      credentials: 'omit',
       headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({auth: authCredentials}),
       // credentials: 'same-origin'
     })
-      .then(res => res.json())
+    // const request = new Request(`${API_URL}/user_token`, {
+    //   method: "POST",
+    //   headers: new Headers({
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //   }),
+    //   body: JSON.stringify({user: userCredentials}),
+    //   // credentials: 'same-origin'
+    // })
+
+      .then(res => {
+        // debugger
+        res.json()})
       .then(response => {
           // debugger
           const token = response.jwt;          

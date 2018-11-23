@@ -6,17 +6,13 @@ import * as routes from '../constants/routes';
 import './NavBar.css'
 
 // TODO: this seems unnecessary?
-const { authToken } = localStorage.token;
+// const { tokenValid } = localStorage.token;
 
-class NavBar extends Component {
-  render() {
-    // debugger
-    return (
-      <div className="NavBar fixed-top text-left py-2">
+const NavBar = ({ isAuthenticated }) =>
+    <div className="NavBar fixed-top text-left py-2">
         <NavLink className="NavLink px-1 ml-4 text-light" to={routes.HOME}>Home</NavLink>
         <NavLink className="NavLink px-1 text-light" to={routes.POSTS}>Latest Posts</NavLink>
-
-        { authToken ? ( 
+        { isAuthenticated ? ( 
           <React.Fragment>
             <NavLink className="NavLink px-1 text-light" to={routes.USER_POSTS}>Your Posts</NavLink>
             <NavLink className="NavLink px-1 ml-4 text-light" to={routes.LOG_OUT}>Logout</NavLink>
@@ -26,31 +22,34 @@ class NavBar extends Component {
             <NavLink className="NavLink px-1 ml-4 text-light" to={routes.LOG_IN}>Log In</NavLink>
             <NavLink className="NavLink px-1 ml-4 text-light" to={routes.SIGN_UP}>Sign up</NavLink>
           </React.Fragment>
-        )}
-        
+        )}  
       </div>
-    );
-  };
-};
 
-export default NavBar;
+// #### Previous ####
+// class NavBar extends Component {
 
-
-// TODO
-// {authUser ? <NavBarAuth /> : <NavBarNoAuth />}
-
-// const NavBarAuth = () => {
-//   
+  // render() {
+    // debugger
+//     return (
 //       <div className="NavBar fixed-top text-left py-2">
 //         <NavLink className="NavLink px-1 ml-4 text-light" to={routes.HOME}>Home</NavLink>
 //         <NavLink className="NavLink px-1 text-light" to={routes.POSTS}>Latest Posts</NavLink>
-//         <NavLink className="NavLink px-1 text-light" to="/users/:userId/posts">Your Posts</NavLink>
-//         <NavLink className="NavLink px-1 text-light" to="/users/:userId">Account</NavLink>
-//         <NavLink className="NavLink px-1 text-light" to="/logout">Logout</NavLink>
+
+//         { isAuthenticated ? ( 
+//           <React.Fragment>
+//             <NavLink className="NavLink px-1 text-light" to={routes.USER_POSTS}>Your Posts</NavLink>
+//             <NavLink className="NavLink px-1 ml-4 text-light" to={routes.LOG_OUT}>Logout</NavLink>
+//             </React.Fragment>
+//          ) : (
+//            <React.Fragment>
+//             <NavLink className="NavLink px-1 ml-4 text-light" to={routes.LOG_IN}>Log In</NavLink>
+//             <NavLink className="NavLink px-1 ml-4 text-light" to={routes.SIGN_UP}>Sign up</NavLink>
+//           </React.Fragment>
+//         )}
+        
 //       </div>
+//     );
+//   };
 // };
 
-// TODO
-// const mapStateToProps = (state) => ({
-//     authUser: state.sessionState.authUser
-// })
+export default NavBar;

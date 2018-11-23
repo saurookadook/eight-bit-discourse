@@ -11,7 +11,12 @@ import "./styles/css/index.css";
 // import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-if (localStorage.getItem('token') === null) {
+// TODO: globally set CSRF token from csrf_meta_tag?
+if (localStorage.getItem('isAuthenticated') === null) {
+  localStorage.setItem('isAuthenticated', false);
+}
+
+if (!localStorage.getItem('token')) {
   localStorage.setItem('token', false);
 }
 
